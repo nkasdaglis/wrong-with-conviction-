@@ -1,0 +1,11 @@
+# Safety net (this directory is hand-curated; nothing sensitive should ever be here):
+.env
+*.token
+*token*.json
+client_secret*.json
+**/SSL_*.md
+**/comms_ledger*
+**/KNOWLEDGE_LEDGER*
+**/*POSTMORTEM*
+__pycache__/
+*.pyc
