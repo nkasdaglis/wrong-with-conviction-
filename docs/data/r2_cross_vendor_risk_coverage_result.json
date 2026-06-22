@@ -1,0 +1,258 @@
+{
+  "pool_n": 3000,
+  "models": {
+    "1.5B": {
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "n": 3000,
+      "err_rate": 0.366,
+      "detector_AUROC_entitygrouped": 0.828,
+      "danger_zone_n": 1500,
+      "danger_zone_base_acc": 0.815,
+      "FULL_STREAM": {
+        "cov_1.0": {
+          "detector": 0.634,
+          "confidence": 0.634,
+          "random": 0.634,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.688,
+          "confidence": 0.667,
+          "random": 0.635,
+          "det_minus_conf_pp": 2.1
+        },
+        "cov_0.8": {
+          "detector": 0.731,
+          "confidence": 0.701,
+          "random": 0.635,
+          "det_minus_conf_pp": 3.0
+        },
+        "cov_0.7": {
+          "detector": 0.776,
+          "confidence": 0.736,
+          "random": 0.635,
+          "det_minus_conf_pp": 4.0
+        },
+        "cov_0.6": {
+          "detector": 0.817,
+          "confidence": 0.777,
+          "random": 0.633,
+          "det_minus_conf_pp": 4.0
+        },
+        "cov_0.5": {
+          "detector": 0.865,
+          "confidence": 0.815,
+          "random": 0.637,
+          "det_minus_conf_pp": 4.9
+        }
+      },
+      "DANGER_ZONE": {
+        "cov_1.0": {
+          "detector": 0.815,
+          "confidence": 0.815,
+          "random": 0.815,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.888,
+          "confidence": 0.831,
+          "random": 0.816,
+          "det_minus_conf_pp": 5.7
+        },
+        "cov_0.8": {
+          "detector": 0.908,
+          "confidence": 0.849,
+          "random": 0.815,
+          "det_minus_conf_pp": 5.9
+        },
+        "cov_0.7": {
+          "detector": 0.923,
+          "confidence": 0.859,
+          "random": 0.815,
+          "det_minus_conf_pp": 6.4
+        },
+        "cov_0.6": {
+          "detector": 0.938,
+          "confidence": 0.877,
+          "random": 0.815,
+          "det_minus_conf_pp": 6.1
+        },
+        "cov_0.5": {
+          "detector": 0.957,
+          "confidence": 0.883,
+          "random": 0.819,
+          "det_minus_conf_pp": 7.5
+        }
+      }
+    },
+    "Llama": {
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "n": 3000,
+      "err_rate": 0.369,
+      "detector_AUROC_entitygrouped": 0.811,
+      "danger_zone_n": 1500,
+      "danger_zone_base_acc": 0.773,
+      "FULL_STREAM": {
+        "cov_1.0": {
+          "detector": 0.631,
+          "confidence": 0.631,
+          "random": 0.631,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.68,
+          "confidence": 0.658,
+          "random": 0.631,
+          "det_minus_conf_pp": 2.2
+        },
+        "cov_0.8": {
+          "detector": 0.719,
+          "confidence": 0.681,
+          "random": 0.631,
+          "det_minus_conf_pp": 3.8
+        },
+        "cov_0.7": {
+          "detector": 0.759,
+          "confidence": 0.715,
+          "random": 0.629,
+          "det_minus_conf_pp": 4.4
+        },
+        "cov_0.6": {
+          "detector": 0.806,
+          "confidence": 0.75,
+          "random": 0.631,
+          "det_minus_conf_pp": 5.6
+        },
+        "cov_0.5": {
+          "detector": 0.845,
+          "confidence": 0.773,
+          "random": 0.633,
+          "det_minus_conf_pp": 7.3
+        }
+      },
+      "DANGER_ZONE": {
+        "cov_1.0": {
+          "detector": 0.773,
+          "confidence": 0.773,
+          "random": 0.773,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.847,
+          "confidence": 0.789,
+          "random": 0.774,
+          "det_minus_conf_pp": 5.8
+        },
+        "cov_0.8": {
+          "detector": 0.886,
+          "confidence": 0.81,
+          "random": 0.771,
+          "det_minus_conf_pp": 7.6
+        },
+        "cov_0.7": {
+          "detector": 0.902,
+          "confidence": 0.817,
+          "random": 0.77,
+          "det_minus_conf_pp": 8.5
+        },
+        "cov_0.6": {
+          "detector": 0.922,
+          "confidence": 0.827,
+          "random": 0.773,
+          "det_minus_conf_pp": 9.6
+        },
+        "cov_0.5": {
+          "detector": 0.949,
+          "confidence": 0.853,
+          "random": 0.775,
+          "det_minus_conf_pp": 9.6
+        }
+      }
+    },
+    "Gemma": {
+      "model_id": "google/gemma-2-2b-it",
+      "n": 3000,
+      "err_rate": 0.36,
+      "detector_AUROC_entitygrouped": 0.815,
+      "danger_zone_n": 1500,
+      "danger_zone_base_acc": 0.797,
+      "FULL_STREAM": {
+        "cov_1.0": {
+          "detector": 0.64,
+          "confidence": 0.64,
+          "random": 0.64,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.699,
+          "confidence": 0.671,
+          "random": 0.64,
+          "det_minus_conf_pp": 2.7
+        },
+        "cov_0.8": {
+          "detector": 0.733,
+          "confidence": 0.708,
+          "random": 0.638,
+          "det_minus_conf_pp": 2.5
+        },
+        "cov_0.7": {
+          "detector": 0.772,
+          "confidence": 0.74,
+          "random": 0.639,
+          "det_minus_conf_pp": 3.3
+        },
+        "cov_0.6": {
+          "detector": 0.816,
+          "confidence": 0.773,
+          "random": 0.643,
+          "det_minus_conf_pp": 4.3
+        },
+        "cov_0.5": {
+          "detector": 0.862,
+          "confidence": 0.797,
+          "random": 0.644,
+          "det_minus_conf_pp": 6.5
+        }
+      },
+      "DANGER_ZONE": {
+        "cov_1.0": {
+          "detector": 0.797,
+          "confidence": 0.797,
+          "random": 0.797,
+          "det_minus_conf_pp": 0.0
+        },
+        "cov_0.9": {
+          "detector": 0.87,
+          "confidence": 0.813,
+          "random": 0.797,
+          "det_minus_conf_pp": 5.6
+        },
+        "cov_0.8": {
+          "detector": 0.895,
+          "confidence": 0.823,
+          "random": 0.799,
+          "det_minus_conf_pp": 7.2
+        },
+        "cov_0.7": {
+          "detector": 0.908,
+          "confidence": 0.833,
+          "random": 0.798,
+          "det_minus_conf_pp": 7.4
+        },
+        "cov_0.6": {
+          "detector": 0.92,
+          "confidence": 0.842,
+          "random": 0.8,
+          "det_minus_conf_pp": 7.8
+        },
+        "cov_0.5": {
+          "detector": 0.935,
+          "confidence": 0.859,
+          "random": 0.797,
+          "det_minus_conf_pp": 7.6
+        }
+      }
+    }
+  },
+  "INTERPRETATION": "Submittable cross-vendor refusal curve (entity-grouped). The det_minus_conf_pp in the DANGER_ZONE is the honest headline; expect softer than the TQA+CV 66->95% but same shape."
+}

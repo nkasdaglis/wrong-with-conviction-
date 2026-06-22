@@ -80,7 +80,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_G3">
     <div class="row"><b>Claim</b><div>Semantic entropy is BLIND to confident error (double dissociation). Gemma-2-27B SE-&gt;error AUROC = 0.527, CI [0.489,0.565], n=800; all 12 models bounded &lt;0.60. Paper: Table I + IV.B.</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\semantic_entropy_nli_gemma27b_result.json</code> &middot; sha16 <code>19f54d11ef7a7e5f</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/semantic_entropy_nli_gemma27b_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\semantic_entropy_nli_gemma27b_result.json</code></a> &middot; sha16 <code>19f54d11ef7a7e5f</code> &middot; <a href="data/semantic_entropy_nli_gemma27b_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>AUROC (semantic entropy -&gt; error), rank-based Mann-Whitney U; bootstrap 95% CI; TriviaQA positive control = double dissociation</div></div>
     <div class="row"><b>Power / rigor</b><div>n=800 (Gemma-2-27B); 12 models / 4 families all &lt;0.60 &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS n matches</li><li class="ck">PASS AUROC in useless band (&lt;0.60)</li><li class="ck">PASS both classes present (non-degenerate)</li><li class="ck">PASS SE has variance (not all-equal)</li></ul></div>
@@ -96,7 +96,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_A1">
     <div class="row"><b>Claim</b><div>Supervised internal-state probe DETECTS confident error. Qwen-0.5B AUROC = 0.731, CI [0.715,0.746], perm p=0.001; clears confound floor 0.566; beats confidence baseline 0.633. Paper: Sec VI + Fig 2.</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\c1_detector_Qwen2p5-0p5B-Instruct_result.json</code> &middot; sha16 <code>491f5f1b30c4737f</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/c1_detector_Qwen2p5-0p5B-Instruct_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\c1_detector_Qwen2p5-0p5B-Instruct_result.json</code></a> &middot; sha16 <code>491f5f1b30c4737f</code> &middot; <a href="data/c1_detector_Qwen2p5-0p5B-Instruct_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>AUROC + permutation p + bootstrap CI; cleared confound floor; vs confidence baseline; held-out 5-fold</div></div>
     <div class="row"><b>Power / rigor</b><div>confident-wrong n=1715 (0.5B); perm p=0.001; independent re-impl 0.787 &middot; <span class="tier tpow">POWERED (PI-ratified 2026-06-22)</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS clears confound floor</li><li class="ck">PASS permutation significant (p&lt;0.05)</li><li class="ck">PASS beats confidence baseline</li><li class="ck">PASS prereg PASS</li></ul></div>
@@ -112,7 +112,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_G4">
     <div class="row"><b>Claim</b><div>Cross-task SE INVERSION: open-gen SE vs forced-choice error AUROC = 0.443, CI excludes high; n=250; 56.5%% of fc-wrong in low-SE cluster. Paper: Sec (inversion).</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\se_kinematic_join_result.json</code> &middot; sha16 <code>89a553ad79aa9d93</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/se_kinematic_join_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\se_kinematic_join_result.json</code></a> &middot; sha16 <code>89a553ad79aa9d93</code> &middot; <a href="data/se_kinematic_join_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>AUROC (open-gen SE vs forced-choice error; non-circular cross-task)</div></div>
     <div class="row"><b>Power / rigor</b><div>n=250 (115 wrong / 135 correct) &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS n = fc_wrong + fc_correct</li><li class="ck">PASS non-circular (independent task)</li><li class="ck">PASS inversion direction (&lt;0.5 or near)</li></ul></div>
@@ -128,7 +128,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_B1">
     <div class="row"><b>Claim</b><div>Internal refusal gate beats calibrated confidence at matched coverage: +5.7 (cov 0.9) to +6.4 (cov 0.7) pts in the danger zone, Qwen-1.5B. Paper: Sec (refusal payoff).</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\r2_cross_vendor_risk_coverage_result.json</code> &middot; sha16 <code>5a6a337f5ecb7210</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/r2_cross_vendor_risk_coverage_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\r2_cross_vendor_risk_coverage_result.json</code></a> &middot; sha16 <code>5a6a337f5ecb7210</code> &middot; <a href="data/r2_cross_vendor_risk_coverage_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>selective prediction: detector vs calibrated confidence at matched coverage (entity-grouped)</div></div>
     <div class="row"><b>Power / rigor</b><div>danger-zone n=1500 (Qwen-1.5B) &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS det&gt;conf @cov_0.9 (gate beats calibrated confidence)</li><li class="ck">PASS det_minus_conf @cov_0.9 ~5.7</li><li class="ck">PASS det_minus_conf @cov_0.7 ~6.4</li><li class="ck">PASS entity-grouped detector AUROC &gt; 0.8</li></ul></div>
@@ -144,7 +144,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_C4">
     <div class="row"><b>Claim</b><div>Router (detect-&gt;route-&gt;correct-&gt;refuse) beats best single fix by +7.1pts on Gemma-2-2B (LEARNED 0.802 vs best-single 0.731); McNemar p&lt;0.001; boot CI excludes 0; n=1013. Paper: Sec VIII.</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\regime_router_powered_gemma2b_result.json</code> &middot; sha16 <code>357adda1c79c8cae</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/regime_router_powered_gemma2b_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\regime_router_powered_gemma2b_result.json</code></a> &middot; sha16 <code>357adda1c79c8cae</code> &middot; <a href="data/regime_router_powered_gemma2b_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>router vs best-single-fix; McNemar p; bootstrap 95% CI; leave-one-source-out leakage control</div></div>
     <div class="row"><b>Power / rigor</b><div>n=1013 (Gemma-2-2B) &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS ordering router&gt;best-single&gt;base</li><li class="ck">PASS gain boot95 CI excludes 0</li><li class="ck">PASS McNemar p&lt;0.001</li><li class="ck">PASS leakage-controlled (heldout-source routing present)</li></ul></div>
@@ -160,7 +160,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_F1">
     <div class="row"><b>Claim</b><div>Integrated governor lift base-&gt;router: Gemma-2-2B 0.597-&gt;0.802 (+20.4pts); headline span +13 to +20.5 across models. Paper: Sec (governor).</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\regime_router_powered_gemma2b_result.json</code> &middot; sha16 <code>357adda1c79c8cae</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/regime_router_powered_gemma2b_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\regime_router_powered_gemma2b_result.json</code></a> &middot; sha16 <code>357adda1c79c8cae</code> &middot; <a href="data/regime_router_powered_gemma2b_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>end-to-end base -&gt; router accuracy lift</div></div>
     <div class="row"><b>Power / rigor</b><div>n=1013 (Gemma-2-2B) &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS router &gt; base</li><li class="ck">PASS lift in +13..+20.5 headline span</li></ul></div>
@@ -176,7 +176,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_C3">
     <div class="row"><b>Claim</b><div>Anti-transfer: the wrong (ordinary) fix does not transfer / actively harms; honestly DOWNGRADED to style-confound (modest, scoped). EXPLORATORY. Paper: Sec (anti-transfer, Limitations).</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\anti_transfer_matrix_qwen0.5b_result.json</code> &middot; sha16 <code>55163ebfdc70bdc4</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/anti_transfer_matrix_qwen0.5b_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\anti_transfer_matrix_qwen0.5b_result.json</code></a> &middot; sha16 <code>55163ebfdc70bdc4</code> &middot; <a href="data/anti_transfer_matrix_qwen0.5b_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>steering transfer matrix; bootstrap</div></div>
     <div class="row"><b>Power / rigor</b><div>exploratory n &middot; <span class="tier texp">EXPLORATORY - style-confound (DOWNGRADED)</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS honest downgrade recorded (STYLE-CONFOUND)</li><li class="ck">PASS flagged EXPLORATORY (not a finding)</li><li class="ck">PASS trap-anti-transfer diagnostics present</li></ul></div>
@@ -192,7 +192,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
   </div>
   <div class="cbody" id="b_D1">
     <div class="row"><b>Claim</b><div>Regime-matched LoRA corrector: base 0.561 -&gt; LoRA 0.852 on HELD-OUT categories (+0.291). Paper: Sec (correctors).</div></div>
-    <div class="row"><b>Source</b><div><code>experiments\epsilon_qwen_2026_06_08\outputs\governance_lora_result.json</code> &middot; sha16 <code>facb4658cd9f6ec9</code></div></div>
+    <div class="row"><b>Source</b><div><a href="data/governance_lora_result.json" target="_blank"><code>experiments\epsilon_qwen_2026_06_08\outputs\governance_lora_result.json</code></a> &middot; sha16 <code>facb4658cd9f6ec9</code> &middot; <a href="data/governance_lora_result.json" target="_blank">view source JSON &#8599;</a></div></div>
     <div class="row"><b>Statistical test</b><div>held-out-category accuracy lift (regime-matched LoRA)</div></div>
     <div class="row"><b>Power / rigor</b><div>n=189 held-out category &middot; <span class="tier tpow">POWERED</span></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS base ~0.561</li><li class="ck">PASS LoRA ~0.852</li><li class="ck">PASS lift positive + held-out (not in-sample)</li></ul></div>

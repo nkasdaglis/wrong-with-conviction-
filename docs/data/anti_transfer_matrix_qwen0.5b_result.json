@@ -1,0 +1,272 @@
+{
+  "experiment": "anti_transfer_matrix",
+  "model": "Qwen2.5-1.5B",
+  "EXPLORATORY": true,
+  "alpha": 0.6,
+  "depth": 0.714,
+  "boot": 2000,
+  "regimes": {
+    "TruthfulQA": "trap",
+    "ARC-Challenge": "ordinary",
+    "OpenBookQA": "ordinary",
+    "MMLU": "ordinary"
+  },
+  "n_ev_wrong": {
+    "TruthfulQA": 47,
+    "ARC-Challenge": 20,
+    "OpenBookQA": 12,
+    "MMLU": 18
+  },
+  "matrix_net_src_to_tgt": {
+    "TruthfulQA": {
+      "TruthfulQA": {
+        "net": -0.25,
+        "rescue": 0.0,
+        "damage": 0.25,
+        "n_wrong": 47,
+        "n_corr": 20,
+        "CI95": [
+          -0.45,
+          -0.05
+        ]
+      },
+      "ARC-Challenge": {
+        "net": -0.2727,
+        "rescue": 0.0,
+        "damage": 0.2727,
+        "n_wrong": 20,
+        "n_corr": 77,
+        "CI95": [
+          -0.3766,
+          -0.1818
+        ]
+      },
+      "OpenBookQA": {
+        "net": -0.1803,
+        "rescue": 0.0,
+        "damage": 0.1803,
+        "n_wrong": 12,
+        "n_corr": 61,
+        "CI95": [
+          -0.2787,
+          -0.0984
+        ]
+      },
+      "MMLU": {
+        "net": -0.2453,
+        "rescue": 0.0,
+        "damage": 0.2453,
+        "n_wrong": 18,
+        "n_corr": 53,
+        "CI95": [
+          -0.3585,
+          -0.1321
+        ]
+      }
+    },
+    "ARC-Challenge": {
+      "TruthfulQA": {
+        "net": -0.95,
+        "rescue": 0.0,
+        "damage": 0.95,
+        "n_wrong": 47,
+        "n_corr": 20,
+        "CI95": [
+          -1.0,
+          -0.85
+        ]
+      },
+      "ARC-Challenge": {
+        "net": -0.6494,
+        "rescue": 0.0,
+        "damage": 0.6494,
+        "n_wrong": 20,
+        "n_corr": 77,
+        "CI95": [
+          -0.7532,
+          -0.5455
+        ]
+      },
+      "OpenBookQA": {
+        "net": -0.7869,
+        "rescue": 0.0,
+        "damage": 0.7869,
+        "n_wrong": 12,
+        "n_corr": 61,
+        "CI95": [
+          -0.8852,
+          -0.6885
+        ]
+      },
+      "MMLU": {
+        "net": -0.717,
+        "rescue": 0.0,
+        "damage": 0.717,
+        "n_wrong": 18,
+        "n_corr": 53,
+        "CI95": [
+          -0.8302,
+          -0.5849
+        ]
+      }
+    },
+    "OpenBookQA": {
+      "TruthfulQA": {
+        "net": -1.0,
+        "rescue": 0.0,
+        "damage": 1.0,
+        "n_wrong": 47,
+        "n_corr": 20,
+        "CI95": [
+          -1.0,
+          -1.0
+        ]
+      },
+      "ARC-Challenge": {
+        "net": -1.0,
+        "rescue": 0.0,
+        "damage": 1.0,
+        "n_wrong": 20,
+        "n_corr": 77,
+        "CI95": [
+          -1.0,
+          -1.0
+        ]
+      },
+      "OpenBookQA": {
+        "net": -1.0,
+        "rescue": 0.0,
+        "damage": 1.0,
+        "n_wrong": 12,
+        "n_corr": 61,
+        "CI95": [
+          -1.0,
+          -1.0
+        ]
+      },
+      "MMLU": {
+        "net": -1.0,
+        "rescue": 0.0,
+        "damage": 1.0,
+        "n_wrong": 18,
+        "n_corr": 53,
+        "CI95": [
+          -1.0,
+          -1.0
+        ]
+      }
+    },
+    "MMLU": {
+      "TruthfulQA": {
+        "net": -0.25,
+        "rescue": 0.0,
+        "damage": 0.25,
+        "n_wrong": 47,
+        "n_corr": 20,
+        "CI95": [
+          -0.45,
+          -0.1
+        ]
+      },
+      "ARC-Challenge": {
+        "net": -0.5325,
+        "rescue": 0.0,
+        "damage": 0.5325,
+        "n_wrong": 20,
+        "n_corr": 77,
+        "CI95": [
+          -0.6364,
+          -0.4156
+        ]
+      },
+      "OpenBookQA": {
+        "net": -0.2295,
+        "rescue": 0.0,
+        "damage": 0.2295,
+        "n_wrong": 12,
+        "n_corr": 61,
+        "CI95": [
+          -0.3443,
+          -0.1307
+        ]
+      },
+      "MMLU": {
+        "net": -0.5283,
+        "rescue": 0.0,
+        "damage": 0.5283,
+        "n_wrong": 18,
+        "n_corr": 53,
+        "CI95": [
+          -0.6604,
+          -0.3962
+        ]
+      }
+    }
+  },
+  "random_floor": {
+    "TruthfulQA": {
+      "net": -0.9,
+      "rescue": 0.0,
+      "damage": 0.9,
+      "n_wrong": 47,
+      "n_corr": 20,
+      "CI95": [
+        -1.0,
+        -0.75
+      ]
+    },
+    "ARC-Challenge": {
+      "net": -0.4805,
+      "rescue": 0.0,
+      "damage": 0.4805,
+      "n_wrong": 20,
+      "n_corr": 77,
+      "CI95": [
+        -0.5974,
+        -0.3766
+      ]
+    },
+    "OpenBookQA": {
+      "net": -0.7541,
+      "rescue": 0.0,
+      "damage": 0.7541,
+      "n_wrong": 12,
+      "n_corr": 61,
+      "CI95": [
+        -0.8525,
+        -0.6393
+      ]
+    },
+    "MMLU": {
+      "net": -0.7358,
+      "rescue": 0.0,
+      "damage": 0.7358,
+      "n_wrong": 18,
+      "n_corr": 53,
+      "CI95": [
+        -0.8491,
+        -0.6038
+      ]
+    }
+  },
+  "diagnostics": {
+    "ordinary_to_ordinary_nets": [
+      -0.7869,
+      -0.717,
+      -1.0,
+      -1.0,
+      -0.5325,
+      -0.2295
+    ],
+    "trap_to_ordinary_nets": [
+      -0.2727,
+      -0.1803,
+      -0.2453
+    ],
+    "ordinary_transfers": false,
+    "trap_anti_transfers": true
+  },
+  "verdict_tag": "STYLE-CONFOUND (anti-transfer DOWNGRADED)",
+  "VERDICT": "Ordinary axes do NOT transfer to other ordinary datasets (within-regime cross-dataset net median -0.752; no cell CI>0) -> every axis is dataset/style-specific. The -8.7pp is the Marin style confound [LIT-23], not two opposite causal regimes. DOWNGRADE the anti-transfer claim; do NOT make it the paper centerpiece. (Honest null.)",
+  "elapsed_s": 55.0
+}

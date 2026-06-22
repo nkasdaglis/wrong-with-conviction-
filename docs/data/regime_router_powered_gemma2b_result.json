@@ -1,0 +1,10167 @@
+{
+  "experiment": "regime_router_powered",
+  "model": "gemma2b",
+  "model_id": "google/gemma-2-2b-it",
+  "n_test_trap": 500,
+  "n_test_ordinary": 513,
+  "steps_per_adapter": 700,
+  "regime_classifier_acc": 0.9793,
+  "leakage_control": {
+    "heldout_source": "OpenBookQA",
+    "heldout_routed_ordinary_acc": 0.9473684210526315,
+    "source_identity_classifier_acc": 0.8193,
+    "n_sources": 3
+  },
+  "BASE": 0.5972,
+  "trap_LoRA_only": 0.7305,
+  "ordinary_LoRA_only": 0.6762,
+  "ORACLE_router": 0.7996,
+  "LEARNED_router": 0.8016,
+  "best_single_fix": 0.7305,
+  "best_single_fix_policy": "trap",
+  "gain_over_best_single_fix": 0.0711,
+  "mcnemar": {
+    "discordant_bsf_right_router_wrong": 18,
+    "discordant_router_right_bsf_wrong": 90,
+    "p_two_sided": 0.0
+  },
+  "gain_boot95_ci": [
+    0.0513,
+    0.0908
+  ],
+  "ordering_router_gt_bsf_gt_base": true,
+  "elapsed_s": 499.6,
+  "VERDICT_proposed": "router 0.802 vs best-single-fix(trap) 0.731 = +7.1pts, McNemar p=0.0000, boot95 [5.1,9.1]pts; leakage: regime-clf 0.979, held-out(OpenBookQA) routed-ord 0.9473684210526315, source-id-bound 0.819. MAGNITUDE CONFIRMATORY (CI excludes 0).",
+  "per_item_rows": [
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "trap",
+      "source": "TQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "ARC-Challenge",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "CommonsenseQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": true
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 0,
+      "oracle": 0,
+      "learned": 0,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 0,
+      "trap": 0,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    },
+    {
+      "reg": "ordinary",
+      "source": "OpenBookQA",
+      "base": 1,
+      "trap": 1,
+      "ord": 1,
+      "oracle": 1,
+      "learned": 1,
+      "pred_trap": false
+    }
+  ]
+}

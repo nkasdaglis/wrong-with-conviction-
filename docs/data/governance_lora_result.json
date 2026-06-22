@@ -1,0 +1,12 @@
+{
+  "model": "Qwen2.5-1.5B",
+  "r": 8,
+  "lr": 0.0001,
+  "steps": 900,
+  "base_heldout_category_acc": 0.561,
+  "lora_heldout_category_acc": 0.852,
+  "lift": 0.291,
+  "n_test_heldout_category": 189,
+  "elapsed_s": 73.6,
+  "VERDICT": "GOVERNANCE LoRA: base 0.561 -> LoRA 0.852 on HELD-OUT categories (+0.291). The LoRA learned a GENERALIZABLE birth-correction (lifts categories it never trained on) -> the steer can be baked into weights, no runtime hook. NS-4."
+}
