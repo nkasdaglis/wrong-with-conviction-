@@ -1,0 +1,27 @@
+============================================================================================
+PROVE THE AUDIT TESTER WORKS
+============================================================================================
+
+(1) POSITIVE CONTROL — harness recompute vs INDEPENDENT implementation (must agree ~1e-9):
+   [PASS] G3 AUROC: harness=0.5274852945  sklearn=0.5274852945  |diff|=0.00e+00
+   [PASS] B1 recompute: harness=6.4000000000  independent(numpy)=6.4000000000  |diff|=0.00e+00
+   [PASS] C4 recompute: harness=0.0710760118  independent(numpy)=0.0710760118  |diff|=0.00e+00
+   [PASS] F1 recompute: harness=0.2043435341  independent(numpy)=0.2043435341  |diff|=0.00e+00
+   [PASS] D1 recompute: harness=0.2910000000  independent(numpy)=0.2910000000  |diff|=0.00e+00
+
+(2) NEGATIVE CONTROL — the tester's MATCH rule must FLAG planted errors (not a rubber-stamp):
+   [PASS] true value 0.527 vs recompute 0.5275 -> reports MATCH (correct)
+   [PASS] planted WRONG value 0.5770 (+0.05) -> reports MISMATCH (caught)
+   [PASS] planted WRONG value 0.6270 (+0.1) -> reports MISMATCH (caught)
+   [PASS] planted WRONG value 0.7270 (+0.2) -> reports MISMATCH (caught)
+   [PASS] within-tol 0.5310 (+0.004) -> MATCH (tolerance behaves)
+
+(3) SAMPLING / STABILITY — bootstrap resample (B=3000) the 800 per-item rows; recompute AUROC each time:
+   bootstrap mean=0.5275  95%=[0.4902,0.5647]   stored=0.527  stored CI=[0.489, 0.565]
+   [PASS] bootstrap mean centers on stored value (|0.5275-0.527|<0.02)
+   [PASS] bootstrap 95% ~ stored CI (both ends within 0.03)
+   [PASS] entire bootstrap 95% stays in the useless band (<0.60): hi=0.5647
+
+============================================================================================
+VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches planted errors, and is stable under resampling.
+============================================================================================
