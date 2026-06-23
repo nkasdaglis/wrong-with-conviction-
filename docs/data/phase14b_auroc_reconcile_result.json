@@ -1,19 +1,19 @@
 {
-  "experiment": "PHASE1.4b_auroc_reconciliation",
-  "band_L": 20,
-  "N": 817,
-  "EXPLORATORY": true,
-  "cells_2x2": {
-    "kinematic_MLP_ORIGINAL": 0.6683,
-    "kinematic_logreg": 0.6956,
-    "rawband_MLP": 0.7958,
-    "rawband_logreg_CLEANROOM": 0.7826
-  },
-  "recorded_was": "kinematic_MLP (~0.731)",
-  "cleanroom_was": "rawband_logreg (~0.787)",
-  "feature_effect_raw_minus_kinematic": 0.1072,
-  "classifier_effect_logreg_minus_mlp": 0.0071,
-  "strongest_cell": "rawband_MLP",
-  "strongest_auroc": 0.7958,
-  "VERDICT": "2x2 on identical rows+folds: kin+MLP(original)=0.6683, kin+logreg=0.6956, raw+MLP=0.7958, raw+logreg(cleanroom)=0.7826. The 0.731-vs-0.787 gap is a METHOD choice (feature effect raw-minus-kinematic=+0.107, classifier effect logreg-minus-MLP=+0.007), NOT a data discrepancy -- same data, same splits. RECOMMENDED HEADLINE: the strongest+simplest detector 'rawband_MLP' = 0.7958 (raw commitment-band hidden state + logistic regression). Both numbers sit inside the cluster-bootstrap CI [0.702, 0.828]; adopt one headline, report the other as a method variant. PI/Max ratify; CSI v9 \u00a75."
+ "experiment": "PHASE1.4b_auroc_reconciliation",
+ "band_L": 20,
+ "N": 817,
+ "EXPLORATORY": true,
+ "cells_2x2": {
+  "kinematic_MLP_ORIGINAL": 0.6683,
+  "kinematic_logreg": 0.6956,
+  "rawband_MLP": 0.7958,
+  "rawband_logreg_CLEANROOM": 0.7826
+ },
+ "recorded_was": "kinematic_MLP (~0.731)",
+ "cleanroom_was": "rawband_logreg (~0.787)",
+ "feature_effect_raw_minus_kinematic": 0.1072,
+ "classifier_effect_logreg_minus_mlp": 0.0071,
+ "strongest_cell": "rawband_MLP",
+ "strongest_auroc": 0.7958,
+ "VERDICT": "2x2 on identical rows+folds: kin+MLP(original)=0.6683, kin+logreg=0.6956, raw+MLP=0.7958, raw+logreg(cleanroom)=0.7826. The 0.731-vs-0.787 gap is a METHOD choice (feature effect raw-minus-kinematic=+0.107, classifier effect logreg-minus-MLP=+0.007), NOT a data discrepancy -- same data, same splits. RECOMMENDED HEADLINE: the strongest+simplest detector 'rawband_MLP' = 0.7958 (raw commitment-band hidden state + logistic regression). Both numbers sit inside the cluster-bootstrap CI [0.702, 0.828]; adopt one headline, report the other as a method variant. Pending ratification."
 }

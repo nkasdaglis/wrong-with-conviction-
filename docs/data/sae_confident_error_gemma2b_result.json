@@ -1,357 +1,357 @@
 {
-  "experiment": "sae_confident_error",
-  "model": "google/gemma-2-2b-it",
-  "tag": "gemma2b",
-  "sae_repos": {
-    "commitband_pt": "google/gemma-scope-2b-pt-res",
-    "trainmatch_it": ""
-  },
-  "sae_width": "16k",
-  "n": 817,
-  "err_rate": 0.634,
-  "n_confident_wrong_est": 260,
-  "capture_dir": "C:\\Users\\nickk\\dev\\contextufy_orchestrator\\experiments\\epsilon_qwen_2026_06_08\\outputs\\sae_capture_gemma2b",
-  "EXPLORATORY": true,
-  "per_sae_layer": {
-    "pt_commitband_L12": {
-      "tag": "pt_commitband_L12",
-      "n": 817,
-      "err_rate": 0.634,
-      "n_confident_wrong": 260,
-      "n_ignorance": 258,
-      "n_correct": 299,
-      "D1_supervised_probe_raw_resid": {
-        "AUROC_oof": 0.583,
-        "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
-      },
-      "D2_spectral_floor_unsup": {
-        "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
-        "resid_norm": {
-          "raw": {
-            "AUROC": 0.514,
-            "CI95": [
-              0.473,
-              0.556
-            ],
-            "perm_p": 0.2519
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.524,
-            "CI95": [
-              0.482,
-              0.565
-            ],
-            "perm_p": 0.1219
-          }
-        },
-        "pca_subspace_resid": {
-          "raw": {
-            "AUROC": 0.542,
-            "CI95": [
-              0.502,
-              0.579
-            ],
-            "perm_p": 0.026
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.545,
-            "CI95": [
-              0.505,
-              0.582
-            ],
-            "perm_p": 0.021
-          }
-        }
-      },
-      "D3_unsupervised_sae_recon_error": {
-        "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
-        "abs__wrong_vs_correct": {
-          "AUROC": 0.482,
-          "CI95": [
-            0.438,
-            0.523
-          ],
-          "perm_p": 0.7956
-        },
-        "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
-          "AUROC": 0.497,
-          "CI95": [
-            0.448,
-            0.545
-          ],
-          "perm_p": 0.5592
-        },
-        "abs__ignorance_vs_correct": {
-          "AUROC": 0.467,
-          "CI95": [
-            0.417,
-            0.515
-          ],
-          "perm_p": 0.918
-        },
-        "rel__wrong_vs_correct": {
-          "AUROC": 0.479,
-          "CI95": [
-            0.436,
-            0.521
-          ],
-          "perm_p": 0.8421
-        },
-        "rel__confidentwrong_vs_correct": {
-          "AUROC": 0.453,
-          "CI95": [
-            0.406,
-            0.5
-          ],
-          "perm_p": 0.9765
-        },
-        "rel__ignorance_vs_correct": {
-          "AUROC": 0.505,
-          "CI95": [
-            0.456,
-            0.553
-          ],
-          "perm_p": 0.4323
-        },
-        "mean_recon_err_confidentwrong": 81.1943,
-        "mean_recon_err_correct": 81.1814,
-        "mean_recon_err_ignorance": 81.0814
-      },
-      "D4_supervised_on_sae_features": {
-        "AUROC_oof_wrong_vs_correct": 0.562,
-        "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
-      },
-      "E_per_feature_oracle_confidentwrong_vs_correct": {
-        "AUROC_oof": 0.524,
-        "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
-      }
+ "experiment": "sae_confident_error",
+ "model": "google/gemma-2-2b-it",
+ "tag": "gemma2b",
+ "sae_repos": {
+  "commitband_pt": "google/gemma-scope-2b-pt-res",
+  "trainmatch_it": ""
+ },
+ "sae_width": "16k",
+ "n": 817,
+ "err_rate": 0.634,
+ "n_confident_wrong_est": 260,
+ "capture_dir": "C:\\Users\\nickk\\dev\\contextufy_orchestrator\\experiments\\epsilon_qwen_2026_06_08\\outputs\\sae_capture_gemma2b",
+ "EXPLORATORY": true,
+ "per_sae_layer": {
+  "pt_commitband_L12": {
+   "tag": "pt_commitband_L12",
+   "n": 817,
+   "err_rate": 0.634,
+   "n_confident_wrong": 260,
+   "n_ignorance": 258,
+   "n_correct": 299,
+   "D1_supervised_probe_raw_resid": {
+    "AUROC_oof": 0.583,
+    "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
+   },
+   "D2_spectral_floor_unsup": {
+    "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
+    "resid_norm": {
+     "raw": {
+      "AUROC": 0.514,
+      "CI95": [
+       0.473,
+       0.556
+      ],
+      "perm_p": 0.2519
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.524,
+      "CI95": [
+       0.482,
+       0.565
+      ],
+      "perm_p": 0.1219
+     }
     },
-    "pt_commitband_L13": {
-      "tag": "pt_commitband_L13",
-      "n": 817,
-      "err_rate": 0.634,
-      "n_confident_wrong": 260,
-      "n_ignorance": 258,
-      "n_correct": 299,
-      "D1_supervised_probe_raw_resid": {
-        "AUROC_oof": 0.588,
-        "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
-      },
-      "D2_spectral_floor_unsup": {
-        "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
-        "resid_norm": {
-          "raw": {
-            "AUROC": 0.482,
-            "CI95": [
-              0.439,
-              0.522
-            ],
-            "perm_p": 0.8091
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.494,
-            "CI95": [
-              0.453,
-              0.535
-            ],
-            "perm_p": 0.5962
-          }
-        },
-        "pca_subspace_resid": {
-          "raw": {
-            "AUROC": 0.542,
-            "CI95": [
-              0.502,
-              0.581
-            ],
-            "perm_p": 0.0245
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.546,
-            "CI95": [
-              0.505,
-              0.585
-            ],
-            "perm_p": 0.0155
-          }
-        }
-      },
-      "D3_unsupervised_sae_recon_error": {
-        "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
-        "abs__wrong_vs_correct": {
-          "AUROC": 0.436,
-          "CI95": [
-            0.396,
-            0.478
-          ],
-          "perm_p": 0.9985
-        },
-        "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
-          "AUROC": 0.452,
-          "CI95": [
-            0.404,
-            0.499
-          ],
-          "perm_p": 0.976
-        },
-        "abs__ignorance_vs_correct": {
-          "AUROC": 0.419,
-          "CI95": [
-            0.373,
-            0.466
-          ],
-          "perm_p": 1.0
-        },
-        "rel__wrong_vs_correct": {
-          "AUROC": 0.467,
-          "CI95": [
-            0.425,
-            0.507
-          ],
-          "perm_p": 0.94
-        },
-        "rel__confidentwrong_vs_correct": {
-          "AUROC": 0.434,
-          "CI95": [
-            0.387,
-            0.482
-          ],
-          "perm_p": 0.9975
-        },
-        "rel__ignorance_vs_correct": {
-          "AUROC": 0.5,
-          "CI95": [
-            0.452,
-            0.546
-          ],
-          "perm_p": 0.5022
-        },
-        "mean_recon_err_confidentwrong": 99.5566,
-        "mean_recon_err_correct": 99.8991,
-        "mean_recon_err_ignorance": 99.4072
-      },
-      "D4_supervised_on_sae_features": {
-        "AUROC_oof_wrong_vs_correct": 0.591,
-        "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
-      },
-      "E_per_feature_oracle_confidentwrong_vs_correct": {
-        "AUROC_oof": 0.548,
-        "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
-      }
-    },
-    "pt_commitband_L14": {
-      "tag": "pt_commitband_L14",
-      "n": 817,
-      "err_rate": 0.634,
-      "n_confident_wrong": 260,
-      "n_ignorance": 258,
-      "n_correct": 299,
-      "D1_supervised_probe_raw_resid": {
-        "AUROC_oof": 0.573,
-        "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
-      },
-      "D2_spectral_floor_unsup": {
-        "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
-        "resid_norm": {
-          "raw": {
-            "AUROC": 0.489,
-            "CI95": [
-              0.45,
-              0.53
-            ],
-            "perm_p": 0.6997
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.493,
-            "CI95": [
-              0.452,
-              0.533
-            ],
-            "perm_p": 0.6387
-          }
-        },
-        "pca_subspace_resid": {
-          "raw": {
-            "AUROC": 0.512,
-            "CI95": [
-              0.471,
-              0.552
-            ],
-            "perm_p": 0.2809
-          },
-          "deconfounded_len_logprob": {
-            "AUROC": 0.518,
-            "CI95": [
-              0.477,
-              0.559
-            ],
-            "perm_p": 0.1914
-          }
-        }
-      },
-      "D3_unsupervised_sae_recon_error": {
-        "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
-        "abs__wrong_vs_correct": {
-          "AUROC": 0.443,
-          "CI95": [
-            0.403,
-            0.486
-          ],
-          "perm_p": 0.9975
-        },
-        "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
-          "AUROC": 0.443,
-          "CI95": [
-            0.395,
-            0.491
-          ],
-          "perm_p": 0.9875
-        },
-        "abs__ignorance_vs_correct": {
-          "AUROC": 0.443,
-          "CI95": [
-            0.395,
-            0.49
-          ],
-          "perm_p": 0.993
-        },
-        "rel__wrong_vs_correct": {
-          "AUROC": 0.463,
-          "CI95": [
-            0.421,
-            0.504
-          ],
-          "perm_p": 0.958
-        },
-        "rel__confidentwrong_vs_correct": {
-          "AUROC": 0.434,
-          "CI95": [
-            0.388,
-            0.482
-          ],
-          "perm_p": 0.9975
-        },
-        "rel__ignorance_vs_correct": {
-          "AUROC": 0.492,
-          "CI95": [
-            0.443,
-            0.541
-          ],
-          "perm_p": 0.6372
-        },
-        "mean_recon_err_confidentwrong": 135.1966,
-        "mean_recon_err_correct": 135.7817,
-        "mean_recon_err_ignorance": 135.2252
-      },
-      "D4_supervised_on_sae_features": {
-        "AUROC_oof_wrong_vs_correct": 0.599,
-        "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
-      },
-      "E_per_feature_oracle_confidentwrong_vs_correct": {
-        "AUROC_oof": 0.549,
-        "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
-      }
+    "pca_subspace_resid": {
+     "raw": {
+      "AUROC": 0.542,
+      "CI95": [
+       0.502,
+       0.579
+      ],
+      "perm_p": 0.026
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.545,
+      "CI95": [
+       0.505,
+       0.582
+      ],
+      "perm_p": 0.021
+     }
     }
+   },
+   "D3_unsupervised_sae_recon_error": {
+    "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
+    "abs__wrong_vs_correct": {
+     "AUROC": 0.482,
+     "CI95": [
+      0.438,
+      0.523
+     ],
+     "perm_p": 0.7956
+    },
+    "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
+     "AUROC": 0.497,
+     "CI95": [
+      0.448,
+      0.545
+     ],
+     "perm_p": 0.5592
+    },
+    "abs__ignorance_vs_correct": {
+     "AUROC": 0.467,
+     "CI95": [
+      0.417,
+      0.515
+     ],
+     "perm_p": 0.918
+    },
+    "rel__wrong_vs_correct": {
+     "AUROC": 0.479,
+     "CI95": [
+      0.436,
+      0.521
+     ],
+     "perm_p": 0.8421
+    },
+    "rel__confidentwrong_vs_correct": {
+     "AUROC": 0.453,
+     "CI95": [
+      0.406,
+      0.5
+     ],
+     "perm_p": 0.9765
+    },
+    "rel__ignorance_vs_correct": {
+     "AUROC": 0.505,
+     "CI95": [
+      0.456,
+      0.553
+     ],
+     "perm_p": 0.4323
+    },
+    "mean_recon_err_confidentwrong": 81.1943,
+    "mean_recon_err_correct": 81.1814,
+    "mean_recon_err_ignorance": 81.0814
+   },
+   "D4_supervised_on_sae_features": {
+    "AUROC_oof_wrong_vs_correct": 0.562,
+    "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
+   },
+   "E_per_feature_oracle_confidentwrong_vs_correct": {
+    "AUROC_oof": 0.524,
+    "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
+   }
   },
-  "INTERPRETATION_GUIDE": "If D3 (unsupervised SAE recon-error) ~0.5 for confident-wrong while D1 (raw probe) and D4 (supervised on features) and the per-feature ORACLE are >>0.5 -> the dictionary-learning READOUT is endpoint-blind to confident-wrong even though the info is present (strong Paper A 'Wrong With Conviction' result). If D3 catches IGNORANCE but is blind to confident-wrong -> a double-dissociation FOR SAEs, mirroring SE."
+  "pt_commitband_L13": {
+   "tag": "pt_commitband_L13",
+   "n": 817,
+   "err_rate": 0.634,
+   "n_confident_wrong": 260,
+   "n_ignorance": 258,
+   "n_correct": 299,
+   "D1_supervised_probe_raw_resid": {
+    "AUROC_oof": 0.588,
+    "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
+   },
+   "D2_spectral_floor_unsup": {
+    "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
+    "resid_norm": {
+     "raw": {
+      "AUROC": 0.482,
+      "CI95": [
+       0.439,
+       0.522
+      ],
+      "perm_p": 0.8091
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.494,
+      "CI95": [
+       0.453,
+       0.535
+      ],
+      "perm_p": 0.5962
+     }
+    },
+    "pca_subspace_resid": {
+     "raw": {
+      "AUROC": 0.542,
+      "CI95": [
+       0.502,
+       0.581
+      ],
+      "perm_p": 0.0245
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.546,
+      "CI95": [
+       0.505,
+       0.585
+      ],
+      "perm_p": 0.0155
+     }
+    }
+   },
+   "D3_unsupervised_sae_recon_error": {
+    "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
+    "abs__wrong_vs_correct": {
+     "AUROC": 0.436,
+     "CI95": [
+      0.396,
+      0.478
+     ],
+     "perm_p": 0.9985
+    },
+    "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
+     "AUROC": 0.452,
+     "CI95": [
+      0.404,
+      0.499
+     ],
+     "perm_p": 0.976
+    },
+    "abs__ignorance_vs_correct": {
+     "AUROC": 0.419,
+     "CI95": [
+      0.373,
+      0.466
+     ],
+     "perm_p": 1.0
+    },
+    "rel__wrong_vs_correct": {
+     "AUROC": 0.467,
+     "CI95": [
+      0.425,
+      0.507
+     ],
+     "perm_p": 0.94
+    },
+    "rel__confidentwrong_vs_correct": {
+     "AUROC": 0.434,
+     "CI95": [
+      0.387,
+      0.482
+     ],
+     "perm_p": 0.9975
+    },
+    "rel__ignorance_vs_correct": {
+     "AUROC": 0.5,
+     "CI95": [
+      0.452,
+      0.546
+     ],
+     "perm_p": 0.5022
+    },
+    "mean_recon_err_confidentwrong": 99.5566,
+    "mean_recon_err_correct": 99.8991,
+    "mean_recon_err_ignorance": 99.4072
+   },
+   "D4_supervised_on_sae_features": {
+    "AUROC_oof_wrong_vs_correct": 0.591,
+    "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
+   },
+   "E_per_feature_oracle_confidentwrong_vs_correct": {
+    "AUROC_oof": 0.548,
+    "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
+   }
+  },
+  "pt_commitband_L14": {
+   "tag": "pt_commitband_L14",
+   "n": 817,
+   "err_rate": 0.634,
+   "n_confident_wrong": 260,
+   "n_ignorance": 258,
+   "n_correct": 299,
+   "D1_supervised_probe_raw_resid": {
+    "AUROC_oof": 0.573,
+    "_note": "ceiling: linear probe on RAW residual, correctness label, 5-fold OOF. Expect 0.73-0.85."
+   },
+   "D2_spectral_floor_unsup": {
+    "_note": "expect ~0.5; deconfounded against answer length + mean-logprob.",
+    "resid_norm": {
+     "raw": {
+      "AUROC": 0.489,
+      "CI95": [
+       0.45,
+       0.53
+      ],
+      "perm_p": 0.6997
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.493,
+      "CI95": [
+       0.452,
+       0.533
+      ],
+      "perm_p": 0.6387
+     }
+    },
+    "pca_subspace_resid": {
+     "raw": {
+      "AUROC": 0.512,
+      "CI95": [
+       0.471,
+       0.552
+      ],
+      "perm_p": 0.2809
+     },
+     "deconfounded_len_logprob": {
+      "AUROC": 0.518,
+      "CI95": [
+       0.477,
+       0.559
+      ],
+      "perm_p": 0.1914
+     }
+    }
+   },
+   "D3_unsupervised_sae_recon_error": {
+    "_note": "LOAD-BEARING: ||x-decode(encode(x))|| as anomaly score. NON-CIRCULAR. confident-wrong expected OOD (>0.5) OR chance.",
+    "abs__wrong_vs_correct": {
+     "AUROC": 0.443,
+     "CI95": [
+      0.403,
+      0.486
+     ],
+     "perm_p": 0.9975
+    },
+    "abs__confidentwrong_vs_correct_EXPECT_0.5_or_high": {
+     "AUROC": 0.443,
+     "CI95": [
+      0.395,
+      0.491
+     ],
+     "perm_p": 0.9875
+    },
+    "abs__ignorance_vs_correct": {
+     "AUROC": 0.443,
+     "CI95": [
+      0.395,
+      0.49
+     ],
+     "perm_p": 0.993
+    },
+    "rel__wrong_vs_correct": {
+     "AUROC": 0.463,
+     "CI95": [
+      0.421,
+      0.504
+     ],
+     "perm_p": 0.958
+    },
+    "rel__confidentwrong_vs_correct": {
+     "AUROC": 0.434,
+     "CI95": [
+      0.388,
+      0.482
+     ],
+     "perm_p": 0.9975
+    },
+    "rel__ignorance_vs_correct": {
+     "AUROC": 0.492,
+     "CI95": [
+      0.443,
+      0.541
+     ],
+     "perm_p": 0.6372
+    },
+    "mean_recon_err_confidentwrong": 135.1966,
+    "mean_recon_err_correct": 135.7817,
+    "mean_recon_err_ignorance": 135.2252
+   },
+   "D4_supervised_on_sae_features": {
+    "AUROC_oof_wrong_vs_correct": 0.599,
+    "_note": "honesty control: supervised linear probe on SAE feature activations, OOF. Expect it to WORK -> info is in the features; unsupervised readout just can't find it."
+   },
+   "E_per_feature_oracle_confidentwrong_vs_correct": {
+    "AUROC_oof": 0.549,
+    "_note": "fair oracle: best single feature picked on TRAIN half, scored on TEST half (OOF). If high while D3 is ~0.5 -> info present, unsupervised readout misses it."
+   }
+  }
+ },
+ "INTERPRETATION_GUIDE": "If D3 (unsupervised SAE recon-error) ~0.5 for confident-wrong while D1 (raw probe) and D4 (supervised on features) and the per-feature ORACLE are >>0.5 -> the dictionary-learning READOUT is endpoint-blind to confident-wrong even though the info is present (strong Paper A 'Wrong With Conviction' result). If D3 catches IGNORANCE but is blind to confident-wrong -> a double-dissociation FOR SAEs, mirroring SE."
 }

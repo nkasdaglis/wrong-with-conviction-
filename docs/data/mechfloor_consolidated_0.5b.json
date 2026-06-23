@@ -1,134 +1,134 @@
 {
-  "experiment": "mechfloor_consolidated",
-  "model": "0.5b",
-  "nL": 24,
-  "band": 17,
-  "K": 16,
-  "Kprop": 5,
-  "n_per_class": {
-    "correct": 50,
-    "trap": 50,
-    "ignorance": 50
+ "experiment": "mechfloor_consolidated",
+ "model": "0.5b",
+ "nL": 24,
+ "band": 17,
+ "K": 16,
+ "Kprop": 5,
+ "n_per_class": {
+  "correct": 50,
+  "trap": 50,
+  "ignorance": 50
+ },
+ "EXPLORATORY": true,
+ "dispersion_metric_note": "HEADLINE dispersion = eig_trace (total variance) + eig_mpcd (mean pairwise cosine distance), rank-deficiency-ROBUST at K=16<<d (independent reviewers converged). eig_logdet/eig_pr retained for continuity but RIDGE-DOMINATED at K<<d -> NOT reliable, do NOT headline. EigenScore measures ANSWER-SAMPLE dispersion (INSIDE), NOT intrinsic representational occupancy (un-estimable at K<<d).",
+ "medians": {
+  "correct": {
+   "eig_trace": 272.0809,
+   "eig_mpcd": 0.4448,
+   "eig_logdet": -6.5939,
+   "eig_pr": 4.0479,
+   "gmax": 6.2,
+   "gain_vs_norm": 2.2153,
+   "prJ": 506.6477
   },
-  "EXPLORATORY": true,
-  "dispersion_metric_note": "HEADLINE dispersion = eig_trace (total variance) + eig_mpcd (mean pairwise cosine distance), rank-deficiency-ROBUST at K=16<<d (RS+OpenAI converged). eig_logdet/eig_pr retained for continuity but RIDGE-DOMINATED at K<<d -> NOT reliable, do NOT headline. EigenScore measures ANSWER-SAMPLE dispersion (INSIDE), NOT intrinsic representational occupancy (un-estimable at K<<d).",
-  "medians": {
-    "correct": {
-      "eig_trace": 272.0809,
-      "eig_mpcd": 0.4448,
-      "eig_logdet": -6.5939,
-      "eig_pr": 4.0479,
-      "gmax": 6.2,
-      "gain_vs_norm": 2.2153,
-      "prJ": 506.6477
-    },
-    "trap": {
-      "eig_trace": 241.0579,
-      "eig_mpcd": 0.3989,
-      "eig_logdet": -21.9888,
-      "eig_pr": 3.0709,
-      "gmax": 6.2659,
-      "gain_vs_norm": 2.2017,
-      "prJ": 505.8866
-    },
-    "ignorance": {
-      "eig_trace": 236.3561,
-      "eig_mpcd": 0.4024,
-      "eig_logdet": -21.3766,
-      "eig_pr": 3.1103,
-      "gmax": 6.1607,
-      "gain_vs_norm": 2.1983,
-      "prJ": 509.2332
-    }
+  "trap": {
+   "eig_trace": 241.0579,
+   "eig_mpcd": 0.3989,
+   "eig_logdet": -21.9888,
+   "eig_pr": 3.0709,
+   "gmax": 6.2659,
+   "gain_vs_norm": 2.2017,
+   "prJ": 505.8866
   },
-  "HEADLINE_TWINS_trap_vs_correct_conf_matched": {
-    "_note": "THE rigorous geometric test: |margin|-quantile-binned AUROC (confidence held fixed by binning). ~0.5 => trap and correct are geometrically IDENTICAL twins (confident-error dispersion is REPRESENTATIONAL, not dynamical -- supports B-ADJ + PR(J)-invariance at the geometry level). Away from 0.5 => a genuine geometric difference. tuple = (auroc, n_used). Robust metrics first.",
-    "eig_trace": [
-      0.407,
-      75
-    ],
-    "eig_mpcd": [
-      0.409,
-      75
-    ],
-    "eig_pr_RIDGE_unreliable": [
-      0.302,
-      75
-    ],
-    "gmax": [
-      0.385,
-      75
-    ]
+  "ignorance": {
+   "eig_trace": 236.3561,
+   "eig_mpcd": 0.4024,
+   "eig_logdet": -21.3766,
+   "eig_pr": 3.1103,
+   "gmax": 6.1607,
+   "gain_vs_norm": 2.1983,
+   "prJ": 509.2332
+  }
+ },
+ "HEADLINE_TWINS_trap_vs_correct_conf_matched": {
+  "_note": "THE rigorous geometric test: |margin|-quantile-binned AUROC (confidence held fixed by binning). ~0.5 => trap and correct are geometrically IDENTICAL twins (confident-error dispersion is REPRESENTATIONAL, not dynamical -- supports B-ADJ + PR(J)-invariance at the geometry level). Away from 0.5 => a genuine geometric difference. tuple = (auroc, n_used). Robust metrics first.",
+  "eig_trace": [
+   0.407,
+   75
+  ],
+  "eig_mpcd": [
+   0.409,
+   75
+  ],
+  "eig_pr_RIDGE_unreliable": [
+   0.302,
+   75
+  ],
+  "gmax": [
+   0.385,
+   75
+  ]
+ },
+ "committed_vs_ignorance_RAW_CONFOUNDED_exploratory_only": {
+  "_warn": "CONFOUNDED by |margin| BY CONSTRUCTION (committed==confident). independent review verdict: this CANNOT be cleanly de-confounded (residualizing on confidence regresses out the group). QUALITATIVE / exploratory ONLY -- never report as a clean separation. absm_medians exposes the confound.",
+  "eig_trace": 0.584,
+  "eig_mpcd": 0.574,
+  "gmax": 0.573,
+  "eig_trace_over_prJ": 0.592,
+  "absm_medians": {
+   "correct": 0.812,
+   "trap": 1.971,
+   "ignorance": 0.496
+  }
+ },
+ "commitment_timing_L": {
+  "correct": {
+   "median_k50": 0.0,
+   "k50_by_category": {
+    "Sociology": 0.0,
+    "Law": 0.0,
+    "Misconceptions": 0.0
+   },
+   "k50_vs_dispersion_spearman": -0.059
   },
-  "committed_vs_ignorance_RAW_CONFOUNDED_exploratory_only": {
-    "_warn": "CONFOUNDED by |margin| BY CONSTRUCTION (committed==confident). Cross-vendor verdict: this CANNOT be cleanly de-confounded (residualizing on confidence regresses out the group). QUALITATIVE / exploratory ONLY -- never report as a clean separation. absm_medians exposes the confound.",
-    "eig_trace": 0.584,
-    "eig_mpcd": 0.574,
-    "gmax": 0.573,
-    "eig_trace_over_prJ": 0.592,
-    "absm_medians": {
-      "correct": 0.812,
-      "trap": 1.971,
-      "ignorance": 0.496
-    }
+  "trap": {
+   "median_k50": 0.0,
+   "k50_by_category": {
+    "Indexical Error: Other": 20.0,
+    "Law": 0.0,
+    "Misconceptions": 0.0
+   },
+   "k50_vs_dispersion_spearman": -0.238
   },
-  "commitment_timing_L": {
-    "correct": {
-      "median_k50": 0.0,
-      "k50_by_category": {
-        "Sociology": 0.0,
-        "Law": 0.0,
-        "Misconceptions": 0.0
-      },
-      "k50_vs_dispersion_spearman": -0.059
-    },
-    "trap": {
-      "median_k50": 0.0,
-      "k50_by_category": {
-        "Indexical Error: Other": 20.0,
-        "Law": 0.0,
-        "Misconceptions": 0.0
-      },
-      "k50_vs_dispersion_spearman": -0.238
-    },
-    "ignorance": {
-      "median_k50": 0.0,
-      "k50_by_category": {
-        "Law": 0.0,
-        "Misconceptions": 0.0,
-        "Economics": 0.0
-      },
-      "k50_vs_dispersion_spearman": 0.205
-    }
+  "ignorance": {
+   "median_k50": 0.0,
+   "k50_by_category": {
+    "Law": 0.0,
+    "Misconceptions": 0.0,
+    "Economics": 0.0
+   },
+   "k50_vs_dispersion_spearman": 0.205
+  }
+ },
+ "gmax_structure_audit": {
+  "_q": "is G_max INVARIANT (like PR) or STRUCTURED (varies w/ category/dispersion)? generic!=invariant",
+  "CV_across_items": {
+   "correct": 0.049,
+   "trap": 0.041,
+   "ignorance": 0.053
   },
-  "gmax_structure_audit": {
-    "_q": "is G_max INVARIANT (like PR) or STRUCTURED (varies w/ category/dispersion)? generic!=invariant",
-    "CV_across_items": {
-      "correct": 0.049,
-      "trap": 0.041,
-      "ignorance": 0.053
-    },
-    "gmax_vs_dispersion_spearman": {
-      "correct": 0.047,
-      "trap": -0.101,
-      "ignorance": 0.319
-    },
-    "gmax_vs_prJ_spearman": {
-      "correct": -0.371,
-      "trap": -0.284,
-      "ignorance": -0.575
-    },
-    "gmax_by_category_committed": {
-      "Language": 6.401,
-      "Indexical Error: Other": 6.312,
-      "Health": 6.308,
-      "Law": 6.258,
-      "Sociology": 6.189,
-      "Misconceptions": 6.165,
-      "Fiction": 6.004
-    }
+  "gmax_vs_dispersion_spearman": {
+   "correct": 0.047,
+   "trap": -0.101,
+   "ignorance": 0.319
   },
-  "compare_to_e20d": "e20d/R-1/R-4: raw G_max REFUTED as detector at 3B on wrong-vs-correct (gain_vs_norm~1, generic, AUROC~0.5). Here: does the {committed vs IGNORANCE} split and/or the /PR(J) ratio change that? + is G_max structured (CV>0, category/dispersion-correlated) rather than invariant?",
-  "wall_s": 333.5,
-  "VERDICT_proposed": "TWINS (trap vs correct, confidence-matched, ROBUST dispersion): trace AUROC=0.407, mpcd AUROC=0.409. TWINS NULL: confident-wrong is geometrically INDISTINGUISHABLE from correct at matched confidence -> confident-error dispersion is REPRESENTATIONAL, not dynamical (supports B-ADJ + geometry-level PR-invariance). committed-vs-ignorance contrast is CONFOUNDED by confidence (un-de-confoundable per cross-vendor) -> raw only, qualitative."
+  "gmax_vs_prJ_spearman": {
+   "correct": -0.371,
+   "trap": -0.284,
+   "ignorance": -0.575
+  },
+  "gmax_by_category_committed": {
+   "Language": 6.401,
+   "Indexical Error: Other": 6.312,
+   "Health": 6.308,
+   "Law": 6.258,
+   "Sociology": 6.189,
+   "Misconceptions": 6.165,
+   "Fiction": 6.004
+  }
+ },
+ "compare_to_e20d": "e20d/R-1/R-4: raw G_max REFUTED as detector at 3B on wrong-vs-correct (gain_vs_norm~1, generic, AUROC~0.5). Here: does the {committed vs IGNORANCE} split and/or the /PR(J) ratio change that? + is G_max structured (CV>0, category/dispersion-correlated) rather than invariant?",
+ "wall_s": 333.5,
+ "VERDICT_proposed": "TWINS (trap vs correct, confidence-matched, ROBUST dispersion): trace AUROC=0.407, mpcd AUROC=0.409. TWINS NULL: confident-wrong is geometrically INDISTINGUISHABLE from correct at matched confidence -> confident-error dispersion is REPRESENTATIONAL, not dynamical (supports B-ADJ + geometry-level PR-invariance). committed-vs-ignorance contrast is CONFOUNDED by confidence (un-de-confoundable per independent review) -> raw only, qualitative."
 }

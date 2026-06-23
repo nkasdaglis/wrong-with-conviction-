@@ -1,125 +1,125 @@
 {
-  "layers": [
-    19,
-    22,
-    24
-  ],
-  "per_benchmark": {
-    "MMLU": {
-      "axis": "recall",
-      "n": 200,
-      "small_acc": 0.64,
-      "n_errors": 72,
-      "governor": {
-        "auroc": 0.814,
-        "ci95": [
-          0.756,
-          0.872
-        ],
-        "perm_p": 0.001
-      }
-    },
-    "ARC-Challenge": {
-      "axis": "reasoning",
-      "n": 200,
-      "small_acc": 0.725,
-      "n_errors": 55,
-      "governor": {
-        "auroc": 0.737,
-        "ci95": [
-          0.667,
-          0.803
-        ],
-        "perm_p": 0.001
-      }
-    },
-    "OpenBookQA": {
-      "axis": "problem-solving",
-      "n": 200,
-      "small_acc": 0.695,
-      "n_errors": 61,
-      "governor": {
-        "auroc": 0.689,
-        "ci95": [
-          0.607,
-          0.76
-        ],
-        "perm_p": 0.001
-      }
-    },
-    "CommonsenseQA": {
-      "axis": "commonsense",
-      "n": 200,
-      "small_acc": 0.715,
-      "n_errors": 57,
-      "governor": {
-        "auroc": 0.701,
-        "ci95": [
-          0.614,
-          0.783
-        ],
-        "perm_p": 0.001
-      }
-    },
-    "HellaSwag": {
-      "axis": "commonsense",
-      "n": 200,
-      "small_acc": 0.43,
-      "n_errors": 114,
-      "governor": {
-        "auroc": 0.628,
-        "ci95": [
-          0.546,
-          0.702
-        ],
-        "perm_p": 0.001
-      }
-    },
-    "WinoGrande": {
-      "axis": "commonsense",
-      "n": 200,
-      "small_acc": 0.555,
-      "n_errors": 89,
-      "governor": {
-        "auroc": 0.498,
-        "ci95": [
-          0.42,
-          0.579
-        ],
-        "perm_p": 0.5465
-      }
-    },
-    "alphaNLI": {
-      "axis": "abduction",
-      "n": 200,
-      "small_acc": 0.67,
-      "n_errors": 66,
-      "governor": {
-        "auroc": 0.618,
-        "ci95": [
-          0.536,
-          0.688
-        ],
-        "perm_p": 0.004
-      }
-    }
-  },
-  "pooled_governor": {
-    "auroc": 0.713,
+ "layers": [
+  19,
+  22,
+  24
+ ],
+ "per_benchmark": {
+  "MMLU": {
+   "axis": "recall",
+   "n": 200,
+   "small_acc": 0.64,
+   "n_errors": 72,
+   "governor": {
+    "auroc": 0.814,
     "ci95": [
-      0.685,
-      0.738
+     0.756,
+     0.872
     ],
     "perm_p": 0.001
+   }
   },
-  "transfer_train_others_test_heldout": {
-    "HellaSwag": 0.563,
-    "alphaNLI": 0.609,
-    "CommonsenseQA": 0.749,
-    "ARC-Challenge": 0.714,
-    "MMLU": 0.656,
-    "WinoGrande": 0.586,
-    "OpenBookQA": 0.744
+  "ARC-Challenge": {
+   "axis": "reasoning",
+   "n": 200,
+   "small_acc": 0.725,
+   "n_errors": 55,
+   "governor": {
+    "auroc": 0.737,
+    "ci95": [
+     0.667,
+     0.803
+    ],
+    "perm_p": 0.001
+   }
   },
-  "claim": "If Governor AUROC holds ~0.8+ across axes AND transfers, the commitment-layer wrong-path signal is task-general."
+  "OpenBookQA": {
+   "axis": "problem-solving",
+   "n": 200,
+   "small_acc": 0.695,
+   "n_errors": 61,
+   "governor": {
+    "auroc": 0.689,
+    "ci95": [
+     0.607,
+     0.76
+    ],
+    "perm_p": 0.001
+   }
+  },
+  "CommonsenseQA": {
+   "axis": "commonsense",
+   "n": 200,
+   "small_acc": 0.715,
+   "n_errors": 57,
+   "governor": {
+    "auroc": 0.701,
+    "ci95": [
+     0.614,
+     0.783
+    ],
+    "perm_p": 0.001
+   }
+  },
+  "HellaSwag": {
+   "axis": "commonsense",
+   "n": 200,
+   "small_acc": 0.43,
+   "n_errors": 114,
+   "governor": {
+    "auroc": 0.628,
+    "ci95": [
+     0.546,
+     0.702
+    ],
+    "perm_p": 0.001
+   }
+  },
+  "WinoGrande": {
+   "axis": "commonsense",
+   "n": 200,
+   "small_acc": 0.555,
+   "n_errors": 89,
+   "governor": {
+    "auroc": 0.498,
+    "ci95": [
+     0.42,
+     0.579
+    ],
+    "perm_p": 0.5465
+   }
+  },
+  "alphaNLI": {
+   "axis": "abduction",
+   "n": 200,
+   "small_acc": 0.67,
+   "n_errors": 66,
+   "governor": {
+    "auroc": 0.618,
+    "ci95": [
+     0.536,
+     0.688
+    ],
+    "perm_p": 0.004
+   }
+  }
+ },
+ "pooled_governor": {
+  "auroc": 0.713,
+  "ci95": [
+   0.685,
+   0.738
+  ],
+  "perm_p": 0.001
+ },
+ "transfer_train_others_test_heldout": {
+  "HellaSwag": 0.563,
+  "alphaNLI": 0.609,
+  "CommonsenseQA": 0.749,
+  "ARC-Challenge": 0.714,
+  "MMLU": 0.656,
+  "WinoGrande": 0.586,
+  "OpenBookQA": 0.744
+ },
+ "claim": "If Governor AUROC holds ~0.8+ across axes AND transfers, the commitment-layer wrong-path signal is task-general."
 }

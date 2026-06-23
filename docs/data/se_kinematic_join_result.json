@@ -1,21 +1,21 @@
 {
-  "experiment": "se_kinematic_join",
-  "source": "e25 SE (Qwen-1.5B, NLI) x layerwise forced-choice y (independent task)",
-  "n": 250,
-  "n_fc_wrong": 115,
-  "n_fc_correct": 135,
-  "n_double_wrong": 80,
-  "SE_median_overall": 1.614,
-  "AUROC_SE_forcedchoiceWRONG_vs_CORRECT_EXPECT_0.5": 0.443,
-  "CI95": [
-    0.375,
-    0.516
-  ],
-  "median_SE_fc_wrong": 1.494,
-  "median_SE_fc_correct": 1.667,
-  "median_SE_double_wrong_absorbing_sink": 1.494,
-  "pct_fc_wrong_in_low_SE_cluster": 56.5,
-  "EXPLORATORY": true,
-  "NONCIRCULAR": "forced-choice error is a DIFFERENT task from open-gen SE -> not measuring itself (fixes the greedy-logprob circularity)",
-  "VERDICT": "open-gen SE vs FORCED-CHOICE error (independent task): AUROC=0.443 CI[0.375, 0.516] (expect ~0.5=BLIND); median SE fc-wrong 1.494 ~ fc-correct 1.667; 56.5% of forced-choice-wrong sit in the low-SE cluster. NON-CIRCULAR confirmation: SE is blind to the forced-choice confident-error basin too -> the absorbing-sink is invisible to semantic entropy across BOTH tasks (independent label)."
+ "experiment": "se_kinematic_join",
+ "source": "e25 SE (Qwen-1.5B, NLI) x layerwise forced-choice y (independent task)",
+ "n": 250,
+ "n_fc_wrong": 115,
+ "n_fc_correct": 135,
+ "n_double_wrong": 80,
+ "SE_median_overall": 1.614,
+ "AUROC_SE_forcedchoiceWRONG_vs_CORRECT_EXPECT_0.5": 0.443,
+ "CI95": [
+  0.375,
+  0.516
+ ],
+ "median_SE_fc_wrong": 1.494,
+ "median_SE_fc_correct": 1.667,
+ "median_SE_double_wrong_absorbing_sink": 1.494,
+ "pct_fc_wrong_in_low_SE_cluster": 56.5,
+ "EXPLORATORY": true,
+ "NONCIRCULAR": "forced-choice error is a DIFFERENT task from open-gen SE -> not measuring itself (fixes the greedy-logprob circularity)",
+ "VERDICT": "open-gen SE vs FORCED-CHOICE error (independent task): AUROC=0.443 CI[0.375, 0.516] (expect ~0.5=BLIND); median SE fc-wrong 1.494 ~ fc-correct 1.667; 56.5% of forced-choice-wrong sit in the low-SE cluster. NON-CIRCULAR confirmation: SE is blind to the forced-choice confident-error basin too -> the absorbing-sink is invisible to semantic entropy across BOTH tasks (independent label)."
 }

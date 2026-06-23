@@ -1,30 +1,30 @@
 {
-  "experiment": "probability_flux_probe",
-  "band_L": 24,
-  "k": 2,
-  "m": 20,
-  "EXPLORATORY": true,
-  "TQA_trap": {
-    "n": 817,
-    "Q_frob": 0.2577,
-    "rho_Q_current_ratio": 0.1768,
-    "rho_Q_CI95": [
-      0.1629,
-      0.1823
-    ],
-    "propagator_radius": 0.776
-  },
-  "GSM8K_reasoning": {
-    "n": 6000,
-    "Q_frob": 0.3162,
-    "rho_Q_current_ratio": 0.2732,
-    "rho_Q_CI95": [
-      0.2619,
-      0.2834
-    ],
-    "propagator_radius": 0.949
-  },
-  "rho_Q_CIs_separated": true,
-  "flux_higher_in_reasoning": true,
-  "VERDICT": "READING B (provisional): the probability-current ratio rho_Q is HIGHER in GSM8K-reasoning (0.273 CI(0.2619, 0.2834)) than TQA-traps (0.177 CI(0.1629, 0.1823)) with NON-OVERLAPPING CIs -> the non-equilibrium flux magnitude varies with cognitive regime = thermodynamic signature of computation, not generic background. Owes: within-GSM8K hard-vs-easy + correct-vs-wrong stratification, length/depth controls, cross-vendor. EXPLORATORY."
+ "experiment": "probability_flux_probe",
+ "band_L": 24,
+ "k": 2,
+ "m": 20,
+ "EXPLORATORY": true,
+ "TQA_trap": {
+  "n": 817,
+  "Q_frob": 0.2577,
+  "rho_Q_current_ratio": 0.1768,
+  "rho_Q_CI95": [
+   0.1629,
+   0.1823
+  ],
+  "propagator_radius": 0.776
+ },
+ "GSM8K_reasoning": {
+  "n": 6000,
+  "Q_frob": 0.3162,
+  "rho_Q_current_ratio": 0.2732,
+  "rho_Q_CI95": [
+   0.2619,
+   0.2834
+  ],
+  "propagator_radius": 0.949
+ },
+ "rho_Q_CIs_separated": true,
+ "flux_higher_in_reasoning": true,
+ "VERDICT": "READING B (provisional): the probability-current ratio rho_Q is HIGHER in GSM8K-reasoning (0.273 CI(0.2619, 0.2834)) than TQA-traps (0.177 CI(0.1629, 0.1823)) with NON-OVERLAPPING CIs -> the non-equilibrium flux magnitude varies with cognitive regime = thermodynamic signature of computation, not generic background. Owes: within-GSM8K hard-vs-easy + correct-vs-wrong stratification, length/depth controls, independent review. EXPLORATORY."
 }

@@ -1,21 +1,21 @@
 {
-  "experiment": "patch_window_powered",
-  "model": "Qwen2.5-1.5B-Instruct",
-  "block": [
-    12,
-    23
-  ],
-  "n_block": 12,
-  "n_candidates": 259,
-  "n_clean": 42,
-  "window_patch_flip": 0.9524,
-  "flip_wilson95": [
-    0.8421,
-    0.9868
-  ],
-  "patched_entropy_mean": 0.4099,
-  "patched_entropy_ci95": 0.0669,
-  "patched_maxprob_mean": 0.8069,
-  "baseline_true_entropy_mean": 0.0739,
-  "VERDICT": "POWERED CONFIRM: window patch flips to confident-FALSE n=42 flip=0.952 (Wilson95 [0.8421,0.9868]) mp=0.807 H=0.410 -> wrong-answer basin EXISTS+reachable on-manifold at this scale (CI excludes coin-flip). NOT Kasdaglis-absorption."
+ "experiment": "patch_window_powered",
+ "model": "Qwen2.5-1.5B-Instruct",
+ "block": [
+  12,
+  23
+ ],
+ "n_block": 12,
+ "n_candidates": 259,
+ "n_clean": 42,
+ "window_patch_flip": 0.9524,
+ "flip_wilson95": [
+  0.8421,
+  0.9868
+ ],
+ "patched_entropy_mean": 0.4099,
+ "patched_entropy_ci95": 0.0669,
+ "patched_maxprob_mean": 0.8069,
+ "baseline_true_entropy_mean": 0.0739,
+ "VERDICT": "POWERED CONFIRM: window patch flips to confident-FALSE n=42 flip=0.952 (Wilson95 [0.8421,0.9868]) mp=0.807 H=0.410 -> wrong-answer basin EXISTS+reachable on-manifold at this scale (CI excludes coin-flip). NOT Kasdaglis-absorption."
 }

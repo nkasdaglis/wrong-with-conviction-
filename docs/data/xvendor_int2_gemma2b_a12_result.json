@@ -1,52 +1,52 @@
 {
-  "experiment": "xvendor_INT2",
-  "model": "google/gemma-2-2b-it",
-  "tag": "gemma2b_a12",
-  "nL": 27,
-  "band_L": 18,
-  "accuracy": 0.827,
-  "n_right_steer": 60,
-  "n_wrong_steer": 52,
-  "alpha": 1.2,
-  "rescue_rate": {
-    "soft_to_gold": 0.0,
-    "iso": 0.019,
-    "random_onmanifold": 0.0
-  },
-  "rescue_CI": {
-    "soft_to_gold": [
-      0.0,
-      0.0
-    ],
-    "iso": [
-      0.0,
-      0.058
-    ],
-    "random_onmanifold": [
-      0.0,
-      0.0
-    ]
-  },
-  "corrupt_rate": {
-    "soft_to_lure": 1.0,
-    "iso": 0.383,
-    "random_onmanifold": 0.7
-  },
-  "corrupt_CI": {
-    "soft_to_lure": [
-      1.0,
-      1.0
-    ],
-    "iso": [
-      0.267,
-      0.5
-    ],
-    "random_onmanifold": [
-      0.583,
-      0.817
-    ]
-  },
-  "anisotropy_rescue_causal": false,
-  "EXPLORATORY": true,
-  "VERDICT": "gemma2b_a12 (acc 0.83): RESCUE soft 0.0 [0.0, 0.0] vs iso 0.019 [0.0, 0.058] / random 0.0. ANISOTROPY-RESCUE does NOT cleanly replicate here (soft ~ iso) -> Qwen-specific or band/alpha-sensitive; scope down."
+ "experiment": "xvendor_INT2",
+ "model": "google/gemma-2-2b-it",
+ "tag": "gemma2b_a12",
+ "nL": 27,
+ "band_L": 18,
+ "accuracy": 0.827,
+ "n_right_steer": 60,
+ "n_wrong_steer": 52,
+ "alpha": 1.2,
+ "rescue_rate": {
+  "soft_to_gold": 0.0,
+  "iso": 0.019,
+  "random_onmanifold": 0.0
+ },
+ "rescue_CI": {
+  "soft_to_gold": [
+   0.0,
+   0.0
+  ],
+  "iso": [
+   0.0,
+   0.058
+  ],
+  "random_onmanifold": [
+   0.0,
+   0.0
+  ]
+ },
+ "corrupt_rate": {
+  "soft_to_lure": 1.0,
+  "iso": 0.383,
+  "random_onmanifold": 0.7
+ },
+ "corrupt_CI": {
+  "soft_to_lure": [
+   1.0,
+   1.0
+  ],
+  "iso": [
+   0.267,
+   0.5
+  ],
+  "random_onmanifold": [
+   0.583,
+   0.817
+  ]
+ },
+ "anisotropy_rescue_causal": false,
+ "EXPLORATORY": true,
+ "VERDICT": "gemma2b_a12 (acc 0.83): RESCUE soft 0.0 [0.0, 0.0] vs iso 0.019 [0.0, 0.058] / random 0.0. ANISOTROPY-RESCUE does NOT cleanly replicate here (soft ~ iso) -> Qwen-specific or band/alpha-sensitive; scope down."
 }

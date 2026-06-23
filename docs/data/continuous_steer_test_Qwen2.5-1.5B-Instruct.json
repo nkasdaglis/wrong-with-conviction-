@@ -1,27 +1,27 @@
 {
-  "experiment": "continuous_steer_test",
-  "model": "Qwen2.5-1.5B-Instruct",
-  "nL": 28,
-  "band_L": 17,
-  "block_layers": [
-    12,
-    23
-  ],
-  "alpha": 0.6,
-  "n_pool": 40,
-  "baseline_entropy": 0.3424,
-  "acc_hi": 0.55,
-  "single_layer": {
-    "flip": 1.0,
-    "entropy": 0.4163,
-    "maxprob": 0.8628,
-    "n_layers": 1
-  },
-  "continuous_block": {
-    "flip": 1.0,
-    "entropy": 6.9603,
-    "maxprob": 0.0505,
-    "n_layers": 12
-  },
-  "VERDICT": "NOT STIFF here: single-layer already flips (1.0); continuous 1.0 (this model is in the steerable regime)"
+ "experiment": "continuous_steer_test",
+ "model": "Qwen2.5-1.5B-Instruct",
+ "nL": 28,
+ "band_L": 17,
+ "block_layers": [
+  12,
+  23
+ ],
+ "alpha": 0.6,
+ "n_pool": 40,
+ "baseline_entropy": 0.3424,
+ "acc_hi": 0.55,
+ "single_layer": {
+  "flip": 1.0,
+  "entropy": 0.4163,
+  "maxprob": 0.8628,
+  "n_layers": 1
+ },
+ "continuous_block": {
+  "flip": 1.0,
+  "entropy": 6.9603,
+  "maxprob": 0.0505,
+  "n_layers": 12
+ },
+ "VERDICT": "NOT STIFF here: single-layer already flips (1.0); continuous 1.0 (this model is in the steerable regime)"
 }

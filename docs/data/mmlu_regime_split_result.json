@@ -1,23 +1,23 @@
 {
-  "experiment": "mmlu_regime_split",
-  "model": "Qwen2.5-1.5B",
-  "EXPLORATORY_first_pass": true,
-  "commit_layer": 26,
-  "n": {
-    "tqa_wrong": 397,
-    "arc_wrong": 357,
-    "mmlu_wrong": 1232,
-    "mmlu_trap_k": 410,
-    "mmlu_ord_k": 410
-  },
-  "cos": {
-    "MMLUtrap_vs_TQAtrap": 0.055,
-    "MMLUtrap_vs_ARCord": 0.671,
-    "MMLUord_vs_ARCord": 0.933,
-    "MMLUord_vs_TQAtrap": 0.099,
-    "TQAtrap_vs_ARCord": 0.205,
-    "MMLUtrap_vs_MMLUord": 0.633
-  },
-  "regime_driven": false,
-  "VERDICT": "Within MMLU, trap (confident-wrong) axis aligns with TQA-trap 0.055 vs ARC-ord 0.671; MMLU-ordinary axis aligns with ARC-ord 0.933 vs TQA-trap 0.099. NOT regime-driven at this pass: MMLU-trap and MMLU-ordinary do NOT split toward the matching reference regimes -> the dataset/style confound STANDS (or the confidence-proxy for trap is too weak). The centerpiece is NOT yet defensible against Marin; needs the frequency-distractor operationalization. EXPLORATORY FIRST PASS: N=1 model, confidence-based trap proxy."
+ "experiment": "mmlu_regime_split",
+ "model": "Qwen2.5-1.5B",
+ "EXPLORATORY_first_pass": true,
+ "commit_layer": 26,
+ "n": {
+  "tqa_wrong": 397,
+  "arc_wrong": 357,
+  "mmlu_wrong": 1232,
+  "mmlu_trap_k": 410,
+  "mmlu_ord_k": 410
+ },
+ "cos": {
+  "MMLUtrap_vs_TQAtrap": 0.055,
+  "MMLUtrap_vs_ARCord": 0.671,
+  "MMLUord_vs_ARCord": 0.933,
+  "MMLUord_vs_TQAtrap": 0.099,
+  "TQAtrap_vs_ARCord": 0.205,
+  "MMLUtrap_vs_MMLUord": 0.633
+ },
+ "regime_driven": false,
+ "VERDICT": "Within MMLU, trap (confident-wrong) axis aligns with TQA-trap 0.055 vs ARC-ord 0.671; MMLU-ordinary axis aligns with ARC-ord 0.933 vs TQA-trap 0.099. NOT regime-driven at this pass: MMLU-trap and MMLU-ordinary do NOT split toward the matching reference regimes -> the dataset/style confound STANDS (or the confidence-proxy for trap is too weak). The centerpiece is NOT yet defensible against Marin; needs the frequency-distractor operationalization. EXPLORATORY FIRST PASS: N=1 model, confidence-based trap proxy."
 }

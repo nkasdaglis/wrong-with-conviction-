@@ -1,63 +1,63 @@
 {
-  "experiment": "C1_detector_refusal_14B",
-  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
-  "model_sha16": "2b1879f356aed350",
-  "dtype": "torch.bfloat16",
-  "feat_dim": 12288,
-  "pool_n": 7710,
-  "confident_n": 3759,
-  "confident_WRONG_n": 591,
-  "n_entity_groups": 3222,
-  "EXPLORATORY": true,
-  "H1_detector": {
-    "auroc": 0.849,
-    "ci95": [
-      0.83,
-      0.866
-    ],
-    "perm_p": 0.001,
-    "confound_floor": 0.698,
-    "clears_floor": true,
-    "confidence_baseline_auroc": 0.713,
-    "PASS_preregistered": true
-  },
-  "H2_refusal": {
-    "full_coverage_acc": 0.843,
-    "selective_acc_at_50pct": 0.961,
-    "random_abstain_at_50pct": 0.843,
-    "curve": [
-      {
-        "coverage": 0.5,
-        "detector_selective_acc": 0.961,
-        "random_abstain_acc": 0.843
-      },
-      {
-        "coverage": 0.6,
-        "detector_selective_acc": 0.951,
-        "random_abstain_acc": 0.842
-      },
-      {
-        "coverage": 0.7,
-        "detector_selective_acc": 0.943,
-        "random_abstain_acc": 0.842
-      },
-      {
-        "coverage": 0.8,
-        "detector_selective_acc": 0.929,
-        "random_abstain_acc": 0.842
-      },
-      {
-        "coverage": 0.9,
-        "detector_selective_acc": 0.906,
-        "random_abstain_acc": 0.843
-      },
-      {
-        "coverage": 1.0,
-        "detector_selective_acc": 0.843,
-        "random_abstain_acc": 0.843
-      }
-    ],
-    "PASS_preregistered": true
-  },
-  "PREREGISTERED_VERDICT": "BOTH PASS at 14B"
+ "experiment": "C1_detector_refusal_14B",
+ "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+ "model_sha16": "2b1879f356aed350",
+ "dtype": "torch.bfloat16",
+ "feat_dim": 12288,
+ "pool_n": 7710,
+ "confident_n": 3759,
+ "confident_WRONG_n": 591,
+ "n_entity_groups": 3222,
+ "EXPLORATORY": true,
+ "H1_detector": {
+  "auroc": 0.849,
+  "ci95": [
+   0.83,
+   0.866
+  ],
+  "perm_p": 0.001,
+  "confound_floor": 0.698,
+  "clears_floor": true,
+  "confidence_baseline_auroc": 0.713,
+  "PASS_preregistered": true
+ },
+ "H2_refusal": {
+  "full_coverage_acc": 0.843,
+  "selective_acc_at_50pct": 0.961,
+  "random_abstain_at_50pct": 0.843,
+  "curve": [
+   {
+    "coverage": 0.5,
+    "detector_selective_acc": 0.961,
+    "random_abstain_acc": 0.843
+   },
+   {
+    "coverage": 0.6,
+    "detector_selective_acc": 0.951,
+    "random_abstain_acc": 0.842
+   },
+   {
+    "coverage": 0.7,
+    "detector_selective_acc": 0.943,
+    "random_abstain_acc": 0.842
+   },
+   {
+    "coverage": 0.8,
+    "detector_selective_acc": 0.929,
+    "random_abstain_acc": 0.842
+   },
+   {
+    "coverage": 0.9,
+    "detector_selective_acc": 0.906,
+    "random_abstain_acc": 0.843
+   },
+   {
+    "coverage": 1.0,
+    "detector_selective_acc": 0.843,
+    "random_abstain_acc": 0.843
+   }
+  ],
+  "PASS_preregistered": true
+ },
+ "PREREGISTERED_VERDICT": "BOTH PASS at 14B"
 }
