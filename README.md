@@ -12,7 +12,7 @@ Every claim in the paper is laid out with its experiment, sample size, effect si
 the reason for its status, and the exact file it came from — and a button to **check the number live in your
 browser**:
 
-### → **[Open the interactive audit](https://nkasdaglis.github.io/wrong-with-conviction-/audit.html)**
+### → **[Open the interactive audit](https://nkasdaglis.github.io/wrong-with-conviction/audit.html)**
 
 Click any claim to expand it; press **Verify** to recompute the statistic from the raw data, or to read the
 value back from its result file, in your browser. The page is read-only — anything you do (verify, mark
@@ -22,7 +22,7 @@ reviewed) stays in your own browser.
 
 | Path | What it is |
 |------|------------|
-| [`docs/audit.html`](https://nkasdaglis.github.io/wrong-with-conviction-/audit.html) | The interactive audit (the link above) |
+| [`docs/audit.html`](https://nkasdaglis.github.io/wrong-with-conviction/audit.html) | The interactive audit (the link above) |
 | [`docs/data/`](docs/data) | The source result file behind every number |
 | [`docs/validation_report.txt`](docs/validation_report.txt) | The verifier's own test results (the recompute engine checked against scikit-learn) |
 | [`LICENSE`](LICENSE), [`PATENTS`](PATENTS) | License and patent notice |
