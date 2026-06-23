@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Wrong With Conviction: Why Confident Errors Evade Detection in Language Models"
+message: "If you use this code or data, please cite the paper (via its DOI) and this repository."
+type: software
+authors:
+  - family-names: Kasdaglis
+    given-names: Nicholas
+    affiliation: "TOPP Interactive Design, LLC"
+    orcid: "https://orcid.org/0009-0004-6452-6543"
+repository-code: "https://github.com/nkasdaglis/wrong-with-conviction"
+url: "https://nkasdaglis.github.io/wrong-with-conviction/audit.html"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20820157
+    description: "Preprint (paper) archived on Zenodo"
+abstract: >-
+  Code, data, and the claim-by-claim interactive reproducibility audit for the paper
+  "Wrong With Conviction: Why Confident Errors Evade Detection in Language Models."
+license: CC-BY-NC-4.0
+version: "1.0.0"
+date-released: "2026-06-23"
+keywords:
+  - hallucination detection
+  - AI governance
+  - large language models
+  - interpretability
+  - AI safety
+  - confidence calibration
+  - trust calibration
