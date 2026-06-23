@@ -3,7 +3,7 @@
 <style>
 :root{--ok:#1a7f37;--bad:#cf222e;--prov:#9a6700;--pow:#0969da;--mut:#57606a}
 *{box-sizing:border-box} body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1f2328;background:#f6f8fa}
-header{background:#0d1117;color:#fff;padding:18px 20px} header h1{margin:0;font-size:19px} header p{margin:6px 0 0;color:#9da7b3;font-size:13px}
+header{background:#0d1117;color:#fff;padding:18px 20px} header h1{margin:0;font-size:19px} header p{margin:6px 0 0;color:#9da7b3;font-size:13px} header .byline{margin:7px 0 2px;color:#cdd9e5;font-size:14px;font-weight:600} header a{color:#79c0ff;text-decoration:none}
 .wrap{max-width:1000px;margin:0 auto;padding:16px}
 .summary{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
 .stat{background:#fff;border:1px solid #d0d7de;border-radius:10px;padding:12px 16px;flex:1;min-width:110px}
@@ -31,8 +31,9 @@ button#genbtn{background:var(--pow);color:#fff;border:0;padding:9px 16px;border-
 .note{color:var(--mut);font-size:12px;margin-top:8px}
 .divider{margin:26px 0 4px;padding-top:14px;border-top:2px solid #d0d7de;font-size:16px;color:var(--mut)}
 </style></head><body>
-<header><h1>Wrong With Conviction &mdash; Result Audit &amp; PI Validation</h1>
-<p>Every load-bearing result with its source, statistical test, power, and a recomputation you can run live in your browser. Generated from <code>scripts/audit.py</code>.</p></header>
+<header><h1>Wrong With Conviction: Why Confident Errors Evade Detection in Language Models</h1>
+<p class="byline">Nicholas Kasdaglis, Ph.D. &middot; TOPP Interactive Design &middot; <a href="mailto:nicholas@toppsystems.com">nicholas@toppsystems.com</a></p>
+<p>Result audit &amp; PI validation &mdash; every load-bearing result with its source, statistical test, power, and a recomputation you can run live in your browser. Generated from <code>scripts/audit.py</code>.</p></header>
 <div class="wrap">
 <div class="summary">
   <div class="stat"><b>8</b><span>load-bearing results</span></div>
@@ -78,7 +79,7 @@ VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches pl
 <div class="card" data-id="G3">
   <div class="chead" onclick="tog('G3')">
     <span class="cid">G3</span><span class="cclaim">Semantic entropy is BLIND to confident error (double dissociation). Gemma-2-27B SE-&gt;error AUROC = 0.527, CI [0.489,0.565], n=800; all 12 models bounded &lt;0.60. Paper: Table I + IV.B.</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="G3" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_G3">
@@ -118,7 +119,7 @@ auroc(y, oof)   # 0.731; clears confound_floor 0.566; perm p=0.001</pre><small>H
 <div class="card" data-id="G4">
   <div class="chead" onclick="tog('G4')">
     <span class="cid">G4</span><span class="cclaim">Cross-task SE INVERSION: open-gen SE vs forced-choice error AUROC = 0.443, CI excludes high; n=250; 56.5%% of fc-wrong in low-SE cluster. Paper: Sec (inversion).</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="G4" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_G4">
@@ -137,7 +138,7 @@ auroc(SE[fc==1], SE[fc==0])   # 0.443; expect ~0.5 = blind across tasks</pre><sm
 <div class="card" data-id="B1">
   <div class="chead" onclick="tog('B1')">
     <span class="cid">B1</span><span class="cclaim">Internal refusal gate beats calibrated confidence at matched coverage: +5.7 (cov 0.9) to +6.4 (cov 0.7) pts in the danger zone, Qwen-1.5B. Paper: Sec (refusal payoff).</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="B1" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_B1">
@@ -156,7 +157,7 @@ auroc(SE[fc==1], SE[fc==0])   # 0.443; expect ~0.5 = blind across tasks</pre><sm
 <div class="card" data-id="C4">
   <div class="chead" onclick="tog('C4')">
     <span class="cid">C4</span><span class="cclaim">Router (detect-&gt;route-&gt;correct-&gt;refuse) beats best single fix by +7.1pts on Gemma-2-2B (LEARNED 0.802 vs best-single 0.731); McNemar p&lt;0.001; boot CI excludes 0; n=1013. Paper: Sec VIII.</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="C4" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_C4">
@@ -175,7 +176,7 @@ mean(learned) - max(mean(trap), mean(ord))   # router vs best single fix
 <div class="card" data-id="F1">
   <div class="chead" onclick="tog('F1')">
     <span class="cid">F1</span><span class="cclaim">Integrated governor lift base-&gt;router: Gemma-2-2B 0.597-&gt;0.802 (+20.4pts); headline span +13 to +20.5 across models. Paper: Sec (governor).</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="F1" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_F1">
@@ -193,7 +194,7 @@ mean(learned) - mean(base)   # end-to-end governor accuracy lift</pre><small>How
 <div class="card" data-id="C3">
   <div class="chead" onclick="tog('C3')">
     <span class="cid">C3</span><span class="cclaim">Anti-transfer honestly DOWNGRADED to a style-confound: the within-regime CROSS-DATASET transfer net median = -0.752 (every cross-dataset axis is negative), so the axes are dataset/style-specific, not two opposite causal regimes. EXPLORATORY. Paper: Limitations.</span>
-    <span class="badge ok">PASS</span><span class="tier texp">EXPLORATORY - style-confound (DOWNGRADED)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier texp">EXPLORATORY - style-confound (DOWNGRADED)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="C3" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_C3">
@@ -212,7 +213,7 @@ median([-0.79,-0.72,-1.0,-1.0,-0.53,-0.23]) = -0.752
 <div class="card" data-id="D1">
   <div class="chead" onclick="tog('D1')">
     <span class="cid">D1</span><span class="cclaim">Regime-matched LoRA corrector: base 0.561 -&gt; LoRA 0.852 on HELD-OUT categories (+0.291). Paper: Sec (correctors).</span>
-    <span class="badge ok">PASS</span><span class="tier tpow">POWERED</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="D1" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_D1">
@@ -270,7 +271,7 @@ auroc(y, oof) = 0.849   # clears floor 0.698; perm p=0.001 (Meta Llama)</pre><sm
 <div class="card" data-id="RX3B">
   <div class="chead" onclick="tog('RX3B')">
     <span class="cid">RX3B</span><span class="cclaim">SUPPORTING: the router (detect-&gt;route-&gt;correct-&gt;refuse) GENERALIZES across models. Gain over the best single fix: Qwen-1.5B +4.7, Qwen-3B +6.2, Gemma-2-2B +7.1, Llama-3.2-3B +5.3 -- all McNemar p&lt;0.001, n=1013/model. Card shows Qwen-3B (+6.2). Paper: Table (router).</span>
-    <span class="badge ok">PASS</span><span class="tier texp">SUPPORTING (router generalizes across models)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier texp">SUPPORTING (router generalizes across models)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="RX3B" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_RX3B">
