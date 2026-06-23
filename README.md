@@ -36,6 +36,24 @@ reviewed) stays in your own browser.
 - **From scratch:** re-running the model captures and probe training from the open-weight models requires a
   GPU; that pipeline is described in the paper.
 
+## Citation
+
+If you use this work, please cite the preprint:
+
+> Kasdaglis, N. (2026). *Wrong With Conviction: Why Confident Errors Evade Detection in Language Models* (Version 1). Zenodo. https://doi.org/10.5281/zenodo.20820157
+
+```bibtex
+@misc{kasdaglis2026wrongwithconviction,
+  author    = {Kasdaglis, Nicholas},
+  title     = {Wrong With Conviction: Why Confident Errors Evade Detection in Language Models},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {1},
+  doi       = {10.5281/zenodo.20820157},
+  url       = {https://doi.org/10.5281/zenodo.20820157}
+}
+```
+
 ## Use & terms
 
 These materials are shared for **peer review, verification, and academic / non-commercial use**. They are
