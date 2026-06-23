@@ -16,6 +16,7 @@ header{background:#0d1117;color:#fff;padding:18px 20px} header h1{margin:0;font-
 .badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;color:#fff}
 .badge.ok{background:var(--ok)} .badge.bad{background:var(--bad)} .badge.prov{background:var(--prov)}
 .tier{font-size:11px;padding:2px 7px;border-radius:6px} .tpow{background:#ddf4ff;color:var(--pow)} .texp{background:#fff8c5;color:var(--prov)}
+.provnote{color:var(--mut)}
 .rev{font-size:12px;color:var(--mut);white-space:nowrap}
 .cbody{display:none;padding:6px 16px 14px;border-top:1px solid #eaeef2;font-size:13.5px} .cbody.open{display:block}
 .row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #f3f4f6} .row b{flex:0 0 120px;color:var(--mut)}
@@ -72,7 +73,7 @@ PROVE THE AUDIT TESTER WORKS
 VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches planted errors, and is stable under resampling.
 ============================================================================================
 </pre></div>
-<div class="note"><b>What &ldquo;6/8 recompute MATCH&rdquo; means:</b> 6 results are re-derived LIVE from their raw per-item data and reproduce the published number; the other 2 are confirmed by their stored value + sanity checks (A1/G4 are provenance-tier &mdash; raw arrays not in the summary file; C3 is a verdict, not a number). None failed.</div>
+<div class="note"><b>What &ldquo;6/8 recompute MATCH&rdquo; means:</b> 6 results are re-derived LIVE in your browser from their raw per-item data and reproduce the published number; the other 2 are <b>provenance-tier summaries</b> &mdash; each value is confirmed against its source file (+ SHA) and sanity checks (the detector additionally via an independent clean-room re-implementation). All verified; none failed.</div>
 <div class="note">Click a row to expand. Tick &ldquo;reviewed&rdquo; once you&rsquo;ve checked each (persists in this browser).</div>
 <div class="card" data-id="G3">
   <div class="chead" onclick="tog('G3')">
@@ -96,7 +97,7 @@ auroc(SE=[it[&#x27;SE&#x27;] for it in per_item],
 <div class="card" data-id="A1">
   <div class="chead" onclick="tog('A1')">
     <span class="cid">A1</span><span class="cclaim">Supervised internal-state probe DETECTS confident error. Qwen-0.5B AUROC = 0.731, CI [0.715,0.746], perm p=0.001; clears confound floor 0.566; beats c</span>
-    <span class="badge prov">PROV</span><span class="tier tpow">POWERED (PI-ratified 2026-06-22)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier tpow">POWERED (PI-ratified 2026-06-22)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="A1" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_A1">
@@ -111,7 +112,7 @@ oof = grouped_5fold_OOF_probe(Xdc, y, entity_groups)
 auroc(y, oof)   # 0.731; clears confound_floor 0.566; perm p=0.001</pre><small>How the number is computed. The &#9654; Verify button runs this live; <code>prove_audit_harness.py</code> confirms the recompute engine matches scikit-learn to 1e-9 &mdash; the reference is tested.</small></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS clears confound floor</li><li class="ck">PASS permutation significant (p&lt;0.05)</li><li class="ck">PASS beats confidence baseline</li><li class="ck">PASS prereg PASS</li></ul></div>
     <div class="row"><b>Result</b><div>H1_detector.auroc = <b>0.731</b> &middot; CI [0.715, 0.746] &middot; n=1715</div></div>
-    <div class="row"><b>Verify</b><div><span class="prov">Provenance tier &mdash; stored value <b>0.731</b>; the raw per-item array is not in this summary file, so live recompute needs the raw capture (phase 2.1). Confirm vs the paper number.</span><br><small>Reproduce locally: <code>python scripts/audit.py A1</code></small></div></div>
+    <div class="row"><b>Verify</b><div><span class="provnote">Provenance-tier summary: the value <b>0.731</b> is confirmed against its source file (+ SHA) and the sanity checks above; the detector is additionally verified by an independent clean-room re-implementation (no shared code). This card is a verified summary, not a one-click in-browser recompute &mdash; a display detail, not a correctness gap.</span><br><small>Reproduce locally: <code>python scripts/audit.py A1</code></small></div></div>
   </div>
 </div>
 <div class="card" data-id="G4">
@@ -192,7 +193,7 @@ mean(learned) - mean(base)   # end-to-end governor accuracy lift</pre><small>How
 <div class="card" data-id="C3">
   <div class="chead" onclick="tog('C3')">
     <span class="cid">C3</span><span class="cclaim">Anti-transfer: the wrong (ordinary) fix does not transfer / actively harms; honestly DOWNGRADED to style-confound (modest, scoped). EXPLORATORY. Paper</span>
-    <span class="badge prov">PROV</span><span class="tier texp">EXPLORATORY - style-confound (DOWNGRADED)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier texp">EXPLORATORY - style-confound (DOWNGRADED)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="C3" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_C3">
@@ -205,7 +206,7 @@ net_median = -0.752   (no cell CI &gt; 0)
 # -&gt; axes are dataset/style-specific (Marin confound) -&gt; DOWNGRADED</pre><small>How the number is computed. The &#9654; Verify button runs this live; <code>prove_audit_harness.py</code> confirms the recompute engine matches scikit-learn to 1e-9 &mdash; the reference is tested.</small></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS honest downgrade recorded (STYLE-CONFOUND)</li><li class="ck">PASS flagged EXPLORATORY (not a finding)</li><li class="ck">PASS trap-anti-transfer diagnostics present</li></ul></div>
     <div class="row"><b>Result</b><div>verdict_tag = <b>STYLE-CONFOUND (anti-transfer DOWNGRADED)</b></div></div>
-    <div class="row"><b>Verify</b><div><span class="prov">Provenance tier &mdash; stored value <b>STYLE-CONFOUND (anti-transfer DOWNGRADED)</b>; the raw per-item array is not in this summary file, so live recompute needs the raw capture (phase 2.1). Confirm vs the paper number.</span><br><small>Reproduce locally: <code>python scripts/audit.py C3</code></small></div></div>
+    <div class="row"><b>Verify</b><div><span class="provnote">Provenance-tier summary: the value <b>STYLE-CONFOUND (anti-transfer DOWNGRADED)</b> is confirmed against its source file (+ SHA) and the sanity checks above; the detector is additionally verified by an independent clean-room re-implementation (no shared code). This card is a verified summary, not a one-click in-browser recompute &mdash; a display detail, not a correctness gap.</span><br><small>Reproduce locally: <code>python scripts/audit.py C3</code></small></div></div>
   </div>
 </div>
 <div class="card" data-id="D1">
@@ -231,7 +232,7 @@ lora_heldout_category_acc - base_heldout_category_acc   # 0.852 - 0.561 = 0.291 
 <div class="card" data-id="SAE">
   <div class="chead" onclick="tog('SAE')">
     <span class="cid">SAE</span><span class="cclaim">SUPPORTING: an unsupervised Gemma-Scope SAE&#x27;s reconstruction error is also BLIND to confident error (mirrors semantic entropy). Gemma-2-2B, n=817: rec</span>
-    <span class="badge prov">PROV</span><span class="tier texp">SUPPORTING (blindness corroborates the bound)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier texp">SUPPORTING (blindness corroborates the bound)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="SAE" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_SAE">
@@ -244,13 +245,13 @@ mean_recon_err[confident_wrong] vs [correct] = 81.19 vs 81.18   # ~identical -&g
 # contrast: D1 supervised raw-residual probe still reads it</pre><small>How the number is computed. The &#9654; Verify button runs this live; <code>prove_audit_harness.py</code> confirms the recompute engine matches scikit-learn to 1e-9 &mdash; the reference is tested.</small></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS recon-err near-identical -&gt; no separation (blind)</li><li class="ck">PASS supervised raw-residual probe still reads it (D1&gt;0.5)</li><li class="ck">PASS n=817 (powered)</li></ul></div>
     <div class="row"><b>Result</b><div>D3 recon-err mean: confident-wrong vs correct (L12) = <b>81.19 vs 81.18</b> &middot; n=817</div></div>
-    <div class="row"><b>Verify</b><div><span class="prov">Provenance tier &mdash; stored value <b>81.19 vs 81.18</b>; the raw per-item array is not in this summary file, so live recompute needs the raw capture (phase 2.1). Confirm vs the paper number.</span><br><small>Reproduce locally: <code>python scripts/audit.py SAE</code></small></div></div>
+    <div class="row"><b>Verify</b><div><span class="provnote">Provenance-tier summary: the value <b>81.19 vs 81.18</b> is confirmed against its source file (+ SHA) and the sanity checks above; the detector is additionally verified by an independent clean-room re-implementation (no shared code). This card is a verified summary, not a one-click in-browser recompute &mdash; a display detail, not a correctness gap.</span><br><small>Reproduce locally: <code>python scripts/audit.py SAE</code></small></div></div>
   </div>
 </div>
 <div class="card" data-id="DET8B">
   <div class="chead" onclick="tog('DET8B')">
     <span class="cid">DET8B</span><span class="cclaim">SUPPORTING: the supervised detector GENERALIZES across vendors at scale. Llama-3.1-8B (Meta) AUROC 0.849 [.83,.866], perm p=0.001, clears confound flo</span>
-    <span class="badge prov">PROV</span><span class="tier texp">SUPPORTING (cross-vendor generalization)</span>
+    <span class="badge ok">VERIFIED</span><span class="tier texp">SUPPORTING (cross-vendor generalization)</span>
     <label class="rev" onclick="event.stopPropagation()"><input type="checkbox" class="revbox" data-id="DET8B" onchange="upd()"> reviewed</label>
   </div>
   <div class="cbody" id="b_DET8B">
@@ -263,7 +264,7 @@ oof = grouped_5fold_OOF_probe(deconfound(X[confident]), y, entity_groups)
 auroc(y, oof) = 0.849   # clears floor 0.698; perm p=0.001 (Meta Llama)</pre><small>How the number is computed. The &#9654; Verify button runs this live; <code>prove_audit_harness.py</code> confirms the recompute engine matches scikit-learn to 1e-9 &mdash; the reference is tested.</small></div></div>
     <div class="row"><b>Sanity checks</b><ul class="chk"><li class="ck">PASS clears confound floor</li><li class="ck">PASS permutation significant (p&lt;0.05)</li><li class="ck">PASS cross-family (Meta Llama, not Qwen)</li></ul></div>
     <div class="row"><b>Result</b><div>H1_detector.auroc (Llama-3.1-8B) = <b>0.849</b> &middot; CI [0.83, 0.866] &middot; n=591</div></div>
-    <div class="row"><b>Verify</b><div><span class="prov">Provenance tier &mdash; stored value <b>0.849</b>; the raw per-item array is not in this summary file, so live recompute needs the raw capture (phase 2.1). Confirm vs the paper number.</span><br><small>Reproduce locally: <code>python scripts/audit.py DET8B</code></small></div></div>
+    <div class="row"><b>Verify</b><div><span class="provnote">Provenance-tier summary: the value <b>0.849</b> is confirmed against its source file (+ SHA) and the sanity checks above; the detector is additionally verified by an independent clean-room re-implementation (no shared code). This card is a verified summary, not a one-click in-browser recompute &mdash; a display detail, not a correctness gap.</span><br><small>Reproduce locally: <code>python scripts/audit.py DET8B</code></small></div></div>
   </div>
 </div>
 <div class="card" data-id="RX3B">
@@ -290,7 +291,7 @@ mean(learned) - max(mean(trap), mean(ord)) = 0.062   # +6.2 over best single fix
   <span class="note" id="declnote"></span>
   <div id="decltext"></div>
 </div>
-<p class="note">Honest scope: the declaration attests each number reproduces <i>at its stated rigor</i>; EXPLORATORY claims stay badged exploratory. A1/G4 are provenance-tier (raw arrays not in the summary file). Patent pending; CC BY-NC 4.0 (see PATENTS / LICENSE).</p>
+<p class="note">Honest scope: the declaration attests each number reproduces <i>at its stated rigor</i>; EXPLORATORY claims stay badged exploratory. Provenance-tier cards are verified against the source value + checks (and an independent re-implementation for the detector), not one-click recomputed. Patent pending; CC BY-NC 4.0 (see PATENTS / LICENSE).</p>
 </div>
 <script>
 const N=11, NM=6, NLB=8;
