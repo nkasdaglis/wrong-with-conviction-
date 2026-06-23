@@ -1,27 +1,41 @@
 ============================================================================================
-PROVE THE AUDIT TESTER WORKS
+PAPER-A AUDIT - PYTHON VALIDATION FOR EVERY CLAIM (validate_all_claims.py)
 ============================================================================================
 
-(1) POSITIVE CONTROL — harness recompute vs INDEPENDENT implementation (must agree ~1e-9):
-   [PASS] G3 AUROC: harness=0.5274852945  sklearn=0.5274852945  |diff|=0.00e+00
-   [PASS] B1 recompute: harness=6.4000000000  independent(numpy)=6.4000000000  |diff|=0.00e+00
-   [PASS] C4 recompute: harness=0.0710760118  independent(numpy)=0.0710760118  |diff|=0.00e+00
-   [PASS] F1 recompute: harness=0.2043435341  independent(numpy)=0.2043435341  |diff|=0.00e+00
-   [PASS] D1 recompute: harness=0.2910000000  independent(numpy)=0.2910000000  |diff|=0.00e+00
+[1/3] RECOMPUTE CLAIMS - re-derive the statistic from the result file and assert MATCH:
+   [PASS] G3    recompute=0.5275 vs published=0.5270  (semantic_entropy_nli_gemma27b_result.json)
+   [PASS] G4    recompute=0.4428 vs published=0.4430  (se_kinematic_join_result.json)
+   [PASS] B1    recompute=6.4000 vs published=6.4000  (r2_cross_vendor_risk_coverage_result.json)
+   [PASS] C4    recompute=0.0711 vs published=0.0711  (regime_router_powered_gemma2b_result.json)
+   [PASS] F1    recompute=0.2043 vs published=0.2044  (regime_router_powered_gemma2b_result.json)
+   [PASS] C3    recompute=-0.7520 vs published=-0.7520  (anti_transfer_matrix_qwen0.5b_result.json)
+   [PASS] D1    recompute=0.2910 vs published=0.2910  (governance_lora_result.json)
+   [PASS] RX3B  recompute=0.0622 vs published=0.0622  (regime_router_powered_qwen3b_result.json)
+   -> 8/8 recompute claims reproduce their published value.
 
-(2) NEGATIVE CONTROL — the tester's MATCH rule must FLAG planted errors (not a rubber-stamp):
-   [PASS] true value 0.527 vs recompute 0.5275 -> reports MATCH (correct)
-   [PASS] planted WRONG value 0.5770 (+0.05) -> reports MISMATCH (caught)
-   [PASS] planted WRONG value 0.6270 (+0.1) -> reports MISMATCH (caught)
-   [PASS] planted WRONG value 0.7270 (+0.2) -> reports MISMATCH (caught)
-   [PASS] within-tol 0.5310 (+0.004) -> MATCH (tolerance behaves)
+[2/3] INVENTORY CLAIMS - read the cited field from the shipped result file (the in-browser path):
+   [PASS] A2    H1_detector.auroc = 0.731  (c1_detector_Qwen2p5-0p5B-Instruct_result.json)
+   [PASS] A3    recorded_detector_AUROC_grouped_oof = 0.7311  (phase14_independent_reimpl_result.json)
+   [PASS] A4    strongest_auroc = 0.7958  (phase14b_auroc_reconcile_result.json)
+   [PASS] F2    pooled_governor.auroc = 0.713  (benchmark_governor_result.json)
+   [PASS] C1    regime_driven = False  (mmlu_regime_split_result.json)
+   [PASS] C2    regime_classifier_acc = 0.997  (regime_router_powered_qwen3b_result.json)
+   [PASS] D2    continuous_block.flip = 1.0  (continuous_steer_test_Qwen2.5-1.5B-Instruct.json)
+   [PASS] D2b   continuous_block.flip = 1.0  (continuous_steer_test_Qwen2.5-1.5B-Instruct.json)
+   [PASS] E1    corrupt_rate.soft_to_lure = 1.0  (xvendor_int2_gemma2b_a12_result.json)
+   [PASS] E2    rescue_rate.soft_to_gold = 0.0  (xvendor_int2_gemma2b_a12_result.json)
+   [PASS] G1    tr_JtJ_sq_mid_mean = 3230.035498046875  (per_layer_pr_Qwen2.5-0.5B-Instruct_smoke.json)
+   [PASS] G2    medians.correct.eig_trace = 272.0809  (mechfloor_consolidated_0.5b.json)
+   [PASS] H1    window_patch_flip = 0.9524  (patch_window_powered_Qwen2.5-1.5B-Instruct.json)
+   [PASS] I1    TQA_trap.rho_Q_current_ratio = 0.1768  (prob_flux_probe_result.json)
+   [PASS] I2    GSM8K_reasoning.rho_Q_current_ratio = 0.2732  (prob_flux_probe_result.json)
+   -> 15/15 inventory claims: the cited field is present in the shipped result file.
 
-(3) SAMPLING / STABILITY — bootstrap resample (B=3000) the 800 per-item rows; recompute AUROC each time:
-   bootstrap mean=0.5275  95%=[0.4902,0.5647]   stored=0.527  stored CI=[0.489, 0.565]
-   [PASS] bootstrap mean centers on stored value (|0.5275-0.527|<0.02)
-   [PASS] bootstrap 95% ~ stored CI (both ends within 0.03)
-   [PASS] entire bootstrap 95% stays in the useless band (<0.60): hi=0.5647
+[3/3] ENGINE PROOFS - the verifier itself is tested:
+   [PASS] prove_audit_harness.py  (exit 0)
+   [PASS] prove_theorem_sim.py  (exit 0)
 
 ============================================================================================
-VERDICT: ALL CONTROLS PASS — the audit tester recomputes correctly, catches planted errors, and is stable under resampling.
+VALIDATION SUMMARY: 23/23 claims validated (8 recompute-MATCH + 15 field-present); engine proofs PASS.
+VERDICT: ALL CLAIMS' VERIFICATION CODE IS VALIDATED.
 ============================================================================================
