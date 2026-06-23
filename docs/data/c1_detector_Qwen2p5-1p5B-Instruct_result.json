@@ -1,0 +1,63 @@
+{
+ "experiment": "C1_detector_refusal_14B",
+ "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+ "model_sha16": "dd924a11b4c220f3",
+ "dtype": "torch.bfloat16",
+ "feat_dim": 4608,
+ "pool_n": 7710,
+ "confident_n": 3794,
+ "confident_WRONG_n": 822,
+ "n_entity_groups": 3269,
+ "EXPLORATORY": true,
+ "H1_detector": {
+  "auroc": 0.779,
+  "ci95": [
+   0.76,
+   0.797
+  ],
+  "perm_p": 0.001,
+  "confound_floor": 0.589,
+  "clears_floor": true,
+  "confidence_baseline_auroc": 0.695,
+  "PASS_preregistered": true
+ },
+ "H2_refusal": {
+  "full_coverage_acc": 0.783,
+  "selective_acc_at_50pct": 0.912,
+  "random_abstain_at_50pct": 0.783,
+  "curve": [
+   {
+    "coverage": 0.5,
+    "detector_selective_acc": 0.912,
+    "random_abstain_acc": 0.783
+   },
+   {
+    "coverage": 0.6,
+    "detector_selective_acc": 0.897,
+    "random_abstain_acc": 0.783
+   },
+   {
+    "coverage": 0.7,
+    "detector_selective_acc": 0.877,
+    "random_abstain_acc": 0.783
+   },
+   {
+    "coverage": 0.8,
+    "detector_selective_acc": 0.859,
+    "random_abstain_acc": 0.784
+   },
+   {
+    "coverage": 0.9,
+    "detector_selective_acc": 0.838,
+    "random_abstain_acc": 0.783
+   },
+   {
+    "coverage": 1.0,
+    "detector_selective_acc": 0.783,
+    "random_abstain_acc": 0.783
+   }
+  ],
+  "PASS_preregistered": true
+ },
+ "PREREGISTERED_VERDICT": "BOTH PASS at 14B"
+}
