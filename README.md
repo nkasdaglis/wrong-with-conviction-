@@ -23,9 +23,9 @@ reviewed) stays in your own browser.
 | Path | What it is |
 |------|------------|
 | [`docs/audit.html`](https://nkasdaglis.github.io/wrong-with-conviction-/audit.html) | The interactive audit (the link above) |
-| `docs/data/` | The source result file behind every number |
-| `docs/validation_report.txt` | The verifier's own test results (the recompute engine checked against scikit-learn) |
-| `LICENSE`, `PATENTS` | License and patent notice |
+| [`docs/data/`](docs/data) | The source result file behind every number |
+| [`docs/validation_report.txt`](docs/validation_report.txt) | The verifier's own test results (the recompute engine checked against scikit-learn) |
+| [`LICENSE`](LICENSE), [`PATENTS`](PATENTS) | License and patent notice |
 
 ## Reproducing the numbers
 
@@ -36,6 +36,10 @@ reviewed) stays in your own browser.
 - **From scratch:** re-running the model captures and probe training from the open-weight models requires a
   GPU; that pipeline is described in the paper.
 
-## License
+## Use & terms
 
-Released under **Creative Commons Attribution-NonCommercial 4.0** (`LICENSE`). Patent pending (`PATENTS`).
+These materials are shared for **peer review, verification, and academic / non-commercial use**. They are
+licensed under **Creative Commons Attribution-NonCommercial 4.0** — you may share and adapt them, with
+attribution, for non-commercial purposes (`LICENSE`). The methods and system described in the paper are
+**patent pending** (`PATENTS`); commercial use, or implementing the methods, requires permission from the
+author. Please cite the paper if you use these materials.
